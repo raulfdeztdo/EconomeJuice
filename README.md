@@ -55,59 +55,73 @@ python3 -m venv venv
 source venv/bin/activate  # En Windows: venv\Scripts\activate
 ```
 
-### 3. Instalar dependencias
+### 3. Instalar dependencias de Python
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Ejecutar análisis inicial
+### 4. Instalar dependencias de Node.js
 
 ```bash
-python3 nasdaq_analyzer.py
+npm install
+```
+
+### 5. Ejecutar análisis inicial
+
+```bash
+python3 src/nasdaq_analyzer.py
 ```
 
 Esto creará un archivo JSON en el directorio `data/` con el análisis del día actual.
 
-### 5. Abrir la página web
+### 6. Iniciar el servidor
 
-Abre `index.html` en tu navegador o usa un servidor local:
+```bash
+npm start
+```
+
+Esto iniciará el servidor Node.js en `http://localhost:3000` con todas las funcionalidades habilitadas.
+
+### Alternativa: Servidor estático simple
+
+Si solo quieres ver la interfaz sin funcionalidades de servidor:
 
 ```bash
 # Con Python
 python3 -m http.server 8000
-
-# Con Node.js (si tienes npx)
-npx serve .
+# Luego visita: http://localhost:8000/public/
 ```
-
-Luego visita `http://localhost:8000`
 
 ## ⚙️ Sistema de Actualización Automática
 
 ### 🔄 Configuración Automática (Recomendado)
 
-El sistema incluye un script de configuración automática que ejecuta el análisis **cada 15 minutos** de lunes a viernes de 7:00 AM a 10:00 PM:
+El sistema incluye configuración automática que ejecuta el análisis **cada 15 minutos** de lunes a viernes de 7:00 AM a 10:00 PM:
 
-```bash
-# Configurar automáticamente el cron job
-./scripts/setup_cron.sh
-```
-
-Esto configurará:
+#### En macOS (LaunchAgent)
+El sistema utiliza LaunchAgent para programar las actualizaciones automáticas:
 - ✅ Ejecución cada 15 minutos durante horario de mercado
 - ✅ Solo días laborables (lunes a viernes)
 - ✅ Horario: 7:00 AM - 10:00 PM
 - ✅ Logs automáticos en `/tmp/nasdaq_analysis.log`
 - ✅ Archivo de timestamp para el frontend
 
+#### En Linux (Cron)
+Para sistemas Linux, usa el script de configuración:
+```bash
+# Configurar automáticamente el cron job
+./scripts/setup_cron.sh
+```
+
 ### 📊 Funcionalidades del Frontend
 
 - **Información de última actualización**: Muestra cuándo fue la última ejecución
 - **Estado visual**: Iconos de éxito (✅), error (❌) o pendiente (⏱️)
 - **Tiempo relativo**: "Hace X minutos" con fecha/hora exacta
-- **Actualización manual**: Botón "Forzar" para ejecutar análisis bajo demanda
+- **Actualización manual**: Botón "Actualizar" para ejecutar análisis bajo demanda
 - **Auto-refresh**: El timestamp se actualiza cada minuto automáticamente
+- **Servidor integrado**: Manejo de actualizaciones a través de API REST
 
 ### 🔧 Configuración Manual (Avanzado)
 
@@ -200,7 +214,8 @@ EconomeJuice/
 │   └── wiki.html         # Wiki de indicadores técnicos
 ├── scripts/               # Scripts de automatización
 │   ├── run_daily_analysis.sh  # Script de ejecución
-│   └── setup_cron.sh     # Configuración automática de cron
+│   ├── setup_cron.sh     # Configuración automática de cron
+│   └── com.econome.nasdaq.analysis.plist # LaunchAgent para macOS
 ├── data/                  # Datos y análisis
 │   ├── last_update.json  # Timestamp de última actualización
 │   ├── 20241220.json     # Análisis por fecha
@@ -208,6 +223,9 @@ EconomeJuice/
 ├── docs/                  # Documentación
 │   ├── automatic_updates.md # Guía de actualizaciones automáticas
 │   └── setup_cron.md     # Configuración de cron
+├── server.js              # Servidor Node.js con API REST
+├── package.json           # Dependencias y scripts de Node.js
+├── package-lock.json      # Lockfile de dependencias
 ├── requirements.txt       # Dependencias de Python
 ├── netlify.toml          # Configuración de despliegue
 ├── .gitignore            # Archivos ignorados por Git
@@ -291,16 +309,49 @@ pip install yfinance
 chmod +x scripts/run_daily_analysis.sh
 ```
 
+### Error: "npm: command not found"
+Instala Node.js desde [nodejs.org](https://nodejs.org) o usando un gestor de paquetes:
+```bash
+# macOS con Homebrew
+brew install node
+
+# Ubuntu/Debian
+sudo apt install nodejs npm
+```
+
+### El servidor Node.js no inicia
+1. Verificar que las dependencias están instaladas:
+   ```bash
+   npm install
+   ```
+2. Verificar que el puerto 3000 no esté en uso:
+   ```bash
+   lsof -i :3000
+   ```
+3. Probar con otro puerto:
+   ```bash
+   PORT=3001 npm start
+   ```
+
+### La actualización manual no funciona
+1. Verificar que el servidor Node.js está ejecutándose
+2. Revisar la consola del navegador para errores
+3. Verificar que el script tiene permisos de ejecución
+4. Probar la actualización manual desde terminal:
+   ```bash
+   curl -X POST http://localhost:3000/run-analysis
+   ```
+
 ### La página no carga datos
 1. Verifica que existe el archivo JSON del día en `data/`
 2. Ejecuta el análisis manualmente: `python3 src/nasdaq_analyzer.py`
 3. Revisa la consola del navegador para errores
 4. Verifica que el archivo `data/last_update.json` existe
 
-### El cron job no se ejecuta
-1. Verificar que el servicio cron está activo:
+### Las actualizaciones automáticas no funcionan (macOS)
+1. Verificar que el LaunchAgent está cargado:
    ```bash
-   sudo launchctl list | grep cron  # macOS
+   launchctl list | grep com.econome.nasdaq.analysis
    ```
 2. Verificar permisos del script:
    ```bash
@@ -310,22 +361,36 @@ chmod +x scripts/run_daily_analysis.sh
    ```bash
    ./scripts/run_daily_analysis.sh
    ```
-4. Ver logs del cron:
+4. Ver logs:
    ```bash
    tail -f /tmp/nasdaq_analysis.log
+   ```
+
+### Las actualizaciones automáticas no funcionan (Linux)
+1. Verificar que el servicio cron está activo:
+   ```bash
+   systemctl status cron
+   ```
+2. Verificar la configuración del crontab:
+   ```bash
+   crontab -l
+   ```
+3. Ver logs del cron:
+   ```bash
+   tail -f /var/log/cron.log
    ```
 
 ### No se muestra la última actualización
 1. Verificar que existe `data/last_update.json`
 2. Verificar formato JSON válido
 3. Revisar consola del navegador para errores de fetch
+4. Si usas el servidor Node.js, verificar que esté ejecutándose
 
 ### Problemas con CORS en desarrollo local
-Usa un servidor HTTP local en lugar de abrir el archivo directamente:
+Usa el servidor Node.js incluido en lugar de un servidor estático:
 ```bash
-# Desde la raíz del proyecto
-python3 -m http.server 8000
-# Luego visita: http://localhost:8000/public/
+npm start
+# Luego visita: http://localhost:3000
 ```
 
 ## 📈 Próximas Mejoras
@@ -336,15 +401,19 @@ python3 -m http.server 8000
 - [x] ~~Modo oscuro~~
 - [x] ~~Wiki de indicadores técnicos en español~~
 - [x] ~~Estructura de proyecto organizada~~
+- [x] ~~API REST para datos y actualizaciones~~
+- [x] ~~Servidor Node.js integrado~~
+- [x] ~~Soporte para macOS con LaunchAgent~~
 - [ ] Integración con APIs de noticias reales
 - [ ] Gráficos interactivos con Chart.js
 - [ ] Alertas por email/SMS
 - [ ] Análisis de múltiples índices
 - [ ] Machine Learning para predicciones
-- [ ] API REST para datos
 - [ ] PWA (Progressive Web App)
 - [ ] Notificaciones push
 - [ ] Análisis de sentimiento de redes sociales
+- [ ] Dashboard de administración
+- [ ] Configuración de intervalos personalizables
 
 ## ⚠️ Disclaimer
 

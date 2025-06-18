@@ -2,12 +2,14 @@
   # Directorio de publicación (donde están los archivos web)
   publish = "public"
   
-  # Comando de construcción (ejecuta el análisis antes del despliegue)
-  command = "python src/nasdaq_analyzer.py"
+  # Comando de construcción (instala dependencias y ejecuta el análisis)
+  command = "pip install -r requirements.txt && python src/nasdaq_analyzer.py"
 
 [build.environment]
   # Versión de Python
   PYTHON_VERSION = "3.9"
+  # Versión de Node.js (para funcionalidades futuras)
+  NODE_VERSION = "18"
 
 # Configuración de redirecciones
 [[redirects]]

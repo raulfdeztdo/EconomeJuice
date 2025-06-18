@@ -1,0 +1,30 @@
+{
+  "name": "econome-juice",
+  "version": "1.0.0",
+  "description": "Análisis automatizado del NASDAQ con actualizaciones en tiempo real",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "analysis": "bash scripts/run_daily_analysis.sh",
+    "setup-cron": "bash scripts/setup_cron.sh"
+  },
+  "keywords": [
+    "nasdaq",
+    "analysis",
+    "trading",
+    "automation",
+    "dashboard"
+  ],
+  "author": "EconomeJuice",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
