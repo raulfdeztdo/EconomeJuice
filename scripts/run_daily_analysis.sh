@@ -6,7 +6,12 @@
 echo "$(date): Iniciando análisis del NASDAQ..."
 
 # Cambiar al directorio del proyecto (directorio padre del script)
-cd "$(dirname "$0")/.."
+# En Netlify, usar la ruta absoluta si está disponible
+if [ -n "$NETLIFY" ] && [ -d "/opt/build/repo" ]; then
+    cd "/opt/build/repo"
+else
+    cd "$(dirname "$0")/.."
+fi
 
 # Activar el entorno virtual si existe
 if [ -d "venv" ]; then
@@ -15,7 +20,15 @@ if [ -d "venv" ]; then
 fi
 
 # Ejecutar el análisis desde la carpeta src
-python src/nasdaq_analyzer.py
+# Intentar diferentes comandos de Python
+if command -v python3 >/dev/null 2>&1; then
+    python3 src/nasdaq_analyzer.py
+elif command -v python >/dev/null 2>&1; then
+    python src/nasdaq_analyzer.py
+else
+    echo "❌ Error: No se encontró Python instalado"
+    exit 1
+fi
 
 # Verificar el resultado
 if [ $? -eq 0 ]; then

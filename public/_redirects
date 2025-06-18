@@ -1,0 +1,8 @@
+# Redirecciones para funciones Netlify
+/run-analysis /.netlify/functions/run-analysis 200
+
+# Redirecciones para archivos de datos
+/data/* /data/:splat 200
+
+# Redirección principal
+/* /index.html 200
