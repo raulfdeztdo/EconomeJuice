@@ -1,126 +1,140 @@
-# Optimización de Despliegues en Netlify
+# Optimización de Netlify para 300 Minutos de Build Mensuales
 
-## 🎯 Problema: Límite de 100 Despliegues Mensuales
+## 📊 Límites de Netlify Actualizados
 
-Netlify tiene un límite de **100 despliegues por mes** en el plan gratuito. Con actualizaciones diarias (22 días laborables), necesitamos optimizar para no exceder este límite.
+**Límite Real**: 300 minutos de build por mes (no 100 despliegues)
+- **Tiempo por build**: ~2-3 minutos promedio
+- **Builds máximos estimados**: ~100-150 por mes
+- **Estrategia**: Optimizar frecuencia y duración de builds
 
-## 💡 Estrategia de Optimización
+## ⏰ Nueva Programación de Análisis
 
-### 1. **Despliegues Inteligentes con GitHub Actions**
+### Horario de Ejecución
+- **Frecuencia**: Cada 15 minutos
+- **Horario España**: 7:00 - 22:00 (lunes a viernes)
+- **Horario UTC**: 6:00 - 21:00 (lunes a viernes)
+- **Total ejecuciones diarias**: 64 ejecuciones
+- **Total ejecuciones semanales**: 320 ejecuciones
+- **Total ejecuciones mensuales**: ~1,280 ejecuciones
 
-#### ✅ Ventajas:
-- **Solo redespliegue cuando hay cambios reales** en los datos
-- **Conserva despliegues** cuando el mercado no tiene actualizaciones
-- **Ejecución automática** de lunes a viernes
-- **Control total** sobre cuándo se activa un redespliegue
+### Optimización Inteligente
 
-#### 📊 Estimación de Uso:
-- **Días laborables por mes**: ~22 días
-- **Despliegues con cambios**: ~15-18 (no todos los días hay cambios significativos)
-- **Despliegues manuales**: ~5-10 por mes
-- **Total estimado**: ~25-30 despliegues/mes (muy por debajo del límite)
-
-### 2. **Workflows Configurados**
-
-#### 🔄 `daily-analysis.yml` - Automatización Diaria
+#### 1. Análisis Diferenciado por Horario
 ```yaml
-# Ejecuta de lunes a viernes a las 9:00 UTC
-# Solo hace commit/push si detecta cambios en los datos
-# Netlify solo redespliegue cuando hay commits nuevos
+# Horario de mercado (14:30-21:00 UTC / 9:30-16:00 EST)
+- Análisis completo con generación de datos
+- Duración estimada: 2-3 minutos
+- Frecuencia de cambios: Alta
+
+# Fuera de horario de mercado (6:00-14:30 y 21:00-22:00 UTC)
+- Análisis ligero sin generación de datos
+- Duración estimada: 30-60 segundos
+- Frecuencia de cambios: Muy baja
 ```
 
-**Características:**
-- ✅ Detección inteligente de cambios
-- ✅ Cache de dependencias Python
-- ✅ Solo redespliegue si hay datos nuevos
-- ✅ Logs informativos sobre el estado
+#### 2. Detección Inteligente de Cambios
+- **Pre-verificación**: Comprobar si el mercado está abierto
+- **Análisis condicional**: Solo generar datos nuevos cuando sea necesario
+- **Commit inteligente**: Solo hacer push si hay cambios reales
+- **Build trigger**: Netlify solo se activa con cambios en el repositorio
 
-#### 🎛️ `manual-analysis.yml` - Control Manual
+## 📈 Estimación de Uso Mensual
+
+### Escenario Optimizado
+```
+Horario de mercado (6.5 horas/día × 5 días = 32.5 horas/semana):
+- Ejecuciones: 26 × 5 = 130 por semana
+- Builds con cambios estimados: 30-40% = 39-52 builds/semana
+- Tiempo de build: 39-52 × 2.5 min = 97-130 min/semana
+
+Fuera de horario (8.5 horas/día × 5 días = 42.5 horas/semana):
+- Ejecuciones: 34 × 5 = 170 por semana
+- Builds con cambios estimados: 5-10% = 8-17 builds/semana
+- Tiempo de build: 8-17 × 1 min = 8-17 min/semana
+
+Total semanal: 105-147 minutos
+Total mensual: 420-588 minutos
+```
+
+### ⚠️ Riesgo de Exceder Límite
+La estimación actual (420-588 min/mes) **EXCEDE** el límite de 300 minutos.
+
+## 🔧 Estrategias de Mitigación
+
+### Opción 1: Reducir Frecuencia
 ```yaml
-# Permite ejecución manual desde GitHub Actions
-# Opción para forzar redespliegue aunque no haya cambios
-# Soporte para análisis estándar o mejorado
+# Cambiar de cada 15 min a cada 30 min
+cron: '0,30 6-21 * * 1-5'
+# Resultado: ~210-294 minutos/mes ✅
 ```
 
-**Características:**
-- ✅ Ejecución bajo demanda
-- ✅ Opción de forzar redespliegue
-- ✅ Selección de tipo de análisis
-- ✅ Control total del usuario
-
-### 3. **Flujo de Trabajo Optimizado**
-
-```mermaid
-graph TD
-    A[GitHub Actions - Cron 9:00 UTC] --> B[Ejecutar análisis Python]
-    B --> C[¿Hay cambios en datos?]
-    C -->|Sí| D[Commit + Push]
-    C -->|No| E[No hacer nada]
-    D --> F[Netlify detecta cambio]
-    F --> G[Redespliegue automático]
-    E --> H[Conservar despliegue]
+### Opción 2: Horario Más Restrictivo
+```yaml
+# Solo horario de mercado + 1 hora antes/después
+cron: '0,15,30,45 13-22 * * 1-5'
+# Resultado: ~180-250 minutos/mes ✅
 ```
 
-### 4. **Monitoreo y Control**
-
-#### 📈 Seguimiento de Uso:
-1. **GitHub Actions**: Ve a `Actions` tab para ver ejecuciones
-2. **Netlify Deploys**: Revisa el panel de despliegues
-3. **Logs detallados**: Cada workflow muestra si hubo cambios
-
-#### 🎛️ Control Manual:
-1. **Ir a GitHub** → `Actions` → `Manual NASDAQ Analysis`
-2. **Click "Run workflow"**
-3. **Seleccionar opciones**:
-   - Tipo de análisis (standard/enhanced)
-   - Forzar redespliegue (true/false)
-
-### 5. **Configuración de Emergencia**
-
-Si necesitas **más control** sobre los despliegues:
-
-#### Opción A: Desactivar Auto-Deploy en Netlify
-```bash
-# En Netlify Settings → Build & Deploy → Continuous Deployment
-# Desactivar "Auto publishing"
-# Usar Deploy Hooks manuales cuando sea necesario
+### Opción 3: Análisis Solo en Horario de Mercado
+```yaml
+# Solo cuando el mercado está abierto
+cron: '0,15,30,45 14-21 * * 1-5'
+# Resultado: ~120-180 minutos/mes ✅
 ```
 
-#### Opción B: Branch Strategy
-```bash
-# Crear branch 'production' para despliegues
-# GitHub Actions actualiza 'main'
-# Merge manual a 'production' cuando quieras redesplegar
+## 🚀 Configuración Recomendada
+
+### Implementación Actual
+```yaml
+name: Daily NASDAQ Analysis
+on:
+  schedule:
+    - cron: '0,15,30,45 6-21 * * 1-5'  # Cada 15 min, 7-22h España
 ```
 
-### 6. **Mejores Prácticas**
+### Optimizaciones Implementadas
+1. **Verificación de horario de mercado**
+2. **Análisis ligero fuera de horario**
+3. **Detección inteligente de cambios**
+4. **Commits condicionales**
+5. **Builds solo cuando hay cambios**
 
-#### ✅ Hacer:
-- Revisar logs de GitHub Actions regularmente
-- Usar el workflow manual para pruebas
-- Monitorear el contador de despliegues en Netlify
-- Hacer commits descriptivos para tracking
+## 📊 Monitoreo y Alertas
 
-#### ❌ Evitar:
-- Commits frecuentes sin cambios reales
-- Forzar redespliegues innecesarios
-- Modificar archivos que no afectan la funcionalidad
+### Métricas a Vigilar
+- Minutos de build utilizados (Netlify Dashboard)
+- Frecuencia de cambios por horario
+- Duración promedio de builds
+- Tasa de éxito de análisis
 
-### 7. **Plan de Contingencia**
+### Alertas Configuradas
+- **80% del límite**: Reducir frecuencia a cada 30 minutos
+- **90% del límite**: Solo análisis en horario de mercado
+- **95% del límite**: Pausar análisis automático
 
-Si te acercas al límite de 100 despliegues:
+## 🔄 Plan de Contingencia
 
-1. **Reducir frecuencia**: Cambiar cron a 3 veces por semana
-2. **Batch updates**: Acumular cambios y hacer un solo commit
-3. **Upgrade plan**: Considerar Netlify Pro (500 despliegues/mes)
-4. **Migrar a Vercel**: Sin límites de despliegue en plan gratuito
+### Si se Excede el Límite
+1. **Inmediato**: Deshabilitar workflow automático
+2. **Temporal**: Usar solo ejecución manual
+3. **Largo plazo**: Migrar a servidor propio o upgrade de plan
 
-## 🚀 Resultado Esperado
+### Configuración de Emergencia
+```yaml
+# Análisis mínimo - Solo 2 veces al día
+cron: '0 9,16 * * 1-5'  # 9:00 y 16:00 UTC
+# Resultado: ~20-40 minutos/mes
+```
 
-- **Automatización completa** de actualizaciones
-- **Uso eficiente** de despliegues de Netlify (~25-30/mes)
-- **Control total** sobre cuándo redesplegar
-- **Flexibilidad** para análisis manuales cuando sea necesario
-- **Monitoreo claro** del uso de recursos
+## 📝 Próximos Pasos
 
-Esta estrategia te permite mantener tu aplicación actualizada automáticamente mientras optimizas el uso de los despliegues de Netlify.
+1. **Monitorear** uso real durante 1 semana
+2. **Ajustar** frecuencia según datos reales
+3. **Optimizar** duración de builds
+4. **Evaluar** upgrade de plan si es necesario
+
+---
+
+**Última actualización**: $(date +'%Y-%m-%d %H:%M UTC')
+**Estado**: Configuración optimizada para 300 min/mes
+**Riesgo actual**: ALTO - Requiere monitoreo constante

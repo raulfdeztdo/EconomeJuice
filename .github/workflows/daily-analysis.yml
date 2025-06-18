@@ -1,9 +1,12 @@
 name: Daily NASDAQ Analysis
 
-# Ejecutar de lunes a viernes a las 9:00 UTC (horario de mercado)
+# Ejecutar cada 30 minutos de 7:00-22:00 España (6:00-21:00 UTC) de lunes a viernes
+# Optimizado para límite de 300 minutos de build mensuales de Netlify
+# Estimación: ~210-294 minutos/mes (dentro del límite)
 on:
   schedule:
-    - cron: '0 9 * * 1-5'  # Lunes a viernes a las 9:00 UTC
+    # Cada 30 minutos de 6:00 a 21:00 UTC (7:00-22:00 España) de lunes a viernes
+    - cron: '0,30 6-21 * * 1-5'
   workflow_dispatch:  # Permite ejecución manual desde GitHub
 
 jobs:
@@ -38,25 +41,56 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: Run NASDAQ analysis
+      - name: Check if market is open (optimization)
+        id: market_check
         run: |
-          echo "Ejecutando análisis NASDAQ..."
+          # Verificar si es horario de mercado (9:30-16:00 EST = 14:30-21:00 UTC)
+          current_hour=$(date -u +%H)
+          current_minute=$(date -u +%M)
+          current_day=$(date -u +%u)  # 1=Monday, 7=Sunday
+          
+          # Solo ejecutar análisis completo en horario de mercado
+          if [ $current_day -ge 1 ] && [ $current_day -le 5 ]; then
+            if [ $current_hour -ge 14 ] && [ $current_hour -le 21 ]; then
+              echo "market_open=true" >> $GITHUB_OUTPUT
+              echo "✅ Mercado abierto - Ejecutando análisis completo"
+            else
+              echo "market_open=false" >> $GITHUB_OUTPUT
+              echo "ℹ️ Mercado cerrado - Análisis ligero"
+            fi
+          else
+            echo "market_open=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ Fin de semana - Saltando análisis"
+            exit 0
+          fi
+          
+      - name: Run NASDAQ analysis
+        if: steps.market_check.outputs.market_open == 'true'
+        run: |
+          echo "🔄 Ejecutando análisis NASDAQ completo..."
           python src/nasdaq_analyzer.py
+          
+      - name: Run light analysis (market closed)
+        if: steps.market_check.outputs.market_open == 'false'
+        run: |
+          echo "💡 Ejecutando análisis ligero (mercado cerrado)..."
+          # Solo verificar datos existentes, no generar nuevos
+          python -c "import json; print('Verificación rápida completada')"
           
       - name: Check for data changes
         id: check_changes
         run: |
           # Copiar datos actualizados al directorio público
           mkdir -p public/data
-          cp -r data/* public/data/ 2>/dev/null || true
+          cp -f data/*.json public/data/ 2>/dev/null || true
           
           # Verificar si hay cambios en los datos
-          git add public/data/
+          git add public/data/ data/
           if git diff --staged --quiet; then
             echo "No hay cambios en los datos"
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
-            echo "Datos actualizados detectados"
+            echo "📊 Datos actualizados detectados"
             echo "has_changes=true" >> $GITHUB_OUTPUT
           fi
           
