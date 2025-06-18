@@ -118,3 +118,5 @@ docs/_build/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+# Local Netlify folder
+.netlify

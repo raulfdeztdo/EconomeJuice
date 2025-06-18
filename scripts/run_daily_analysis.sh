@@ -21,17 +21,24 @@ fi
 
 # Ejecutar el análisis desde la carpeta src
 # Intentar diferentes comandos de Python
+echo "🐍 Verificando instalación de Python..."
 if command -v python3 >/dev/null 2>&1; then
+    echo "✅ Usando python3"
     python3 src/nasdaq_analyzer.py
+    PYTHON_EXIT_CODE=$?
 elif command -v python >/dev/null 2>&1; then
+    echo "✅ Usando python"
     python src/nasdaq_analyzer.py
+    PYTHON_EXIT_CODE=$?
 else
     echo "❌ Error: No se encontró Python instalado"
-    exit 1
+    PYTHON_EXIT_CODE=1
 fi
 
+echo "🔍 Código de salida de Python: $PYTHON_EXIT_CODE"
+
 # Verificar el resultado
-if [ $? -eq 0 ]; then
+if [ $PYTHON_EXIT_CODE -eq 0 ]; then
     echo "✅ Análisis completado exitosamente"
 
     # Verificar que se creó el archivo JSON del día
