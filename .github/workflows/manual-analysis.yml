@@ -1,0 +1,91 @@
+name: Manual NASDAQ Analysis
+
+# Workflow para ejecutar análisis manual cuando sea necesario
+on:
+  workflow_dispatch:
+    inputs:
+      force_deploy:
+        description: 'Forzar redespliegue aunque no haya cambios'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      analysis_type:
+        description: 'Tipo de análisis a ejecutar'
+        required: false
+        default: 'standard'
+        type: choice
+        options:
+          - 'standard'
+          - 'enhanced'
+
+jobs:
+  manual-update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Run standard analysis
+        if: github.event.inputs.analysis_type == 'standard'
+        run: |
+          echo "🔄 Ejecutando análisis estándar..."
+          python src/nasdaq_analyzer.py
+          
+      - name: Run enhanced analysis
+        if: github.event.inputs.analysis_type == 'enhanced'
+        run: |
+          echo "🚀 Ejecutando análisis mejorado..."
+          python src/enhanced_analyzer.py
+          
+      - name: Update public data
+        run: |
+          mkdir -p public/data
+          cp -r data/* public/data/ 2>/dev/null || true
+          
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git add public/data/
+          if git diff --staged --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Commit changes
+        if: steps.check_changes.outputs.has_changes == 'true' || github.event.inputs.force_deploy == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action (Manual)"
+          
+          if [ "${{ steps.check_changes.outputs.has_changes }}" == "true" ]; then
+            git commit -m "📊 Manual update - ${{ github.event.inputs.analysis_type }} analysis - $(date +'%Y-%m-%d %H:%M UTC')"
+          else
+            # Forzar commit vacío para trigger redespliegue
+            git commit --allow-empty -m "🔄 Force redeploy - $(date +'%Y-%m-%d %H:%M UTC')"
+          fi
+          
+          git push
+          
+      - name: Summary
+        run: |
+          echo "✅ Análisis manual completado"
+          echo "📊 Tipo: ${{ github.event.inputs.analysis_type }}"
+          echo "🔄 Cambios detectados: ${{ steps.check_changes.outputs.has_changes }}"
+          echo "🚀 Forzar redespliegue: ${{ github.event.inputs.force_deploy }}"
