@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconomeJuice - Análisis NASDAQ 100</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+        }
+        @media (min-width: 768px) {
+            * {
+                font-size: 14px;
+            }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-bg-dark {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .card-shadow-dark {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .trend-bullish {
+            color: #10b981;
+        }
+        .trend-bearish {
+            color: #ef4444;
+        }
+        .trend-neutral {
+            color: #6b7280;
+        }
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+        .dark .card-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .theme-toggle {
+            transition: all 0.3s ease;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <div id="app">
+        <!-- Header -->
+        <header class="gradient-bg dark:gradient-bg-dark text-white shadow-lg">
+            <div class="container mx-auto px-4 py-4 md:py-6">
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
+                    <div class="flex items-center space-x-2 md:space-x-3">
+                        <i class="fas fa-chart-line text-xl md:text-2xl"></i>
+                        <h1 class="text-xl md:text-2xl font-bold">EconomeJuice</h1>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+                        <div class="text-center md:text-right">
+                            <p class="text-sm md:text-base">Análisis Técnico NASDAQ 100</p>
+                            <p class="text-xs md:text-sm opacity-90">{{ currentDate }}</p>
+                        </div>
+                        <div class="flex items-center space-x-2 md:space-x-3">
+                            <a href="wiki.html" class="inline-flex items-center px-2 py-1 md:px-3 md:py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 text-xs md:text-sm">
+                                <svg class="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                                <span class="hidden sm:inline">Wiki</span>
+                            </a>
+                            <button @click="toggleDarkMode" class="theme-toggle p-1 md:p-2 rounded-lg bg-white bg-opacity-20 hover:bg-opacity-30" :title="isDarkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'" :aria-label="isDarkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'">
+                                <i :class="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'" class="text-sm md:text-lg"></i>
+                                <span class="sr-only">{{ isDarkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro' }}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+            <!-- Date Selector -->
+            <div class="mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg card-shadow dark:card-shadow-dark p-4 md:p-6">
+                    <h2 class="text-lg md:text-xl font-semibold mb-3 md:mb-4 flex items-center text-gray-900 dark:text-white">
+                        <i class="fas fa-calendar-alt mr-2 text-blue-600 text-sm md:text-base"></i>
+                        <span class="text-sm md:text-base">Seleccionar Fecha</span>
+                    </h2>
+                    <div class="flex flex-col sm:flex-row gap-3 md:gap-4 items-start sm:items-center">
+                        <input
+                            type="date"
+                            v-model="selectedDate"
+                            @change="loadAnalysis"
+                            title="Seleccionar fecha para análisis"
+                            aria-label="Seleccionar fecha para análisis técnico"
+                            class="text-sm md:text-base px-3 py-2 md:px-4 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full sm:w-auto"
+                        >
+                        <button
+                            @click="loadAnalysis"
+                            :disabled="loading"
+                            class="px-3 py-2 md:px-4 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white rounded-lg transition-colors duration-200 flex items-center text-sm md:text-base w-full sm:w-auto justify-center"
+                        >
+                            <i class="fas fa-sync-alt mr-1 md:mr-2" :class="{'animate-spin': loading}"></i>
+                            <span v-if="loading">Cargando...</span>
+                            <span v-else>Actualizar</span>
+                        </button>
+                        <button
+                            @click="manualUpdate"
+                            :disabled="loading || isUpdating"
+                            class="px-3 py-2 md:px-4 bg-orange-600 hover:bg-orange-700 disabled:bg-orange-400 text-white rounded-lg transition-colors text-sm md:text-base w-full sm:w-auto justify-center"
+                        >
+                            <i class="fas fa-bolt mr-1 md:mr-2" :class="{'animate-spin': isUpdating}"></i>
+                            <span v-if="isUpdating">Forzando...</span>
+                            <span v-else>Forzar</span>
+                        </button>
+                        <button
+                            @click="loadToday"
+                            class="px-3 py-2 md:px-4 bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800 text-white rounded-lg transition-colors text-sm md:text-base w-full sm:w-auto"
+                        >
+                            <i class="fas fa-calendar-day mr-1 md:mr-2"></i>Hoy
+                        </button>
+                        <div class="flex flex-wrap gap-1 md:gap-2 w-full sm:w-auto">
+                            <button
+                                v-for="date in availableDates.slice(0, 5)"
+                                :key="date"
+                                @click="selectDate(date)"
+                                class="px-2 py-1 md:px-3 text-xs md:text-sm bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors"
+                            >
+                                {{ formatDate(date) }}
+                            </button>
+                        </div>
+
+
+                    </div>
+                    
+                    <!-- Información de Última Actualización -->
+                    <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs md:text-sm text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg">{{ getUpdateStatusIcon() }}</span>
+                                <span class="font-medium">Última actualización:</span>
+                                <span class="text-gray-800 dark:text-gray-200">{{ formatLastUpdate() }}</span>
+                            </div>
+                            <div v-if="lastUpdate" class="text-xs text-gray-500 dark:text-gray-500">
+                                {{ lastUpdate.toLocaleString('es-ES', { 
+                                    day: '2-digit', 
+                                    month: '2-digit', 
+                                    year: 'numeric', 
+                                    hour: '2-digit', 
+                                    minute: '2-digit' 
+                                }) }}
+                            </div>
+                        </div>
+                        <div v-if="updateStatus === 'error'" class="mt-2 text-xs text-red-600 dark:text-red-400">
+                            <i class="fas fa-exclamation-triangle mr-1"></i>
+                            Hubo un problema en la última actualización automática
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div v-if="loading" class="text-center py-12">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-400">Cargando análisis...</p>
+            </div>
+
+            <!-- Error State -->
+            <div v-if="error" class="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 rounded-lg p-6 mb-6">
+                <div class="flex items-center">
+                    <i class="fas fa-exclamation-triangle text-red-500 mr-3"></i>
+                    <div>
+                        <h3 class="text-red-800 dark:text-red-200 font-semibold">Error al cargar datos</h3>
+                        <p class="text-red-600 dark:text-red-300">{{ error }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analysis Content -->
+            <div v-if="analysis && !loading" class="space-y-8">
+                <!-- Summary Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg card-shadow dark:card-shadow-dark p-6">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center text-gray-900 dark:text-white">
+                        <i class="fas fa-chart-bar mr-3 text-green-600"></i>
+                        Resumen del Análisis
+                    </h2>
+
+                    <!-- Tendencia Principal -->
+                    <div class="mb-6">
+                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900 dark:to-indigo-900 rounded-lg p-4">
+                            <h3 class="text-lg font-semibold mb-3 text-gray-900 dark:text-white flex items-center">
+                                <i class="fas fa-trending-up mr-2 text-blue-600"></i>
+                                Tendencia Principal
+                            </h3>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <span class="text-2xl mr-2">{{ analysis.summary?.main_trend?.emoji }}</span>
+                                    <span class="text-xl font-bold text-gray-900 dark:text-white">
+                                        {{ analysis.summary?.main_trend?.direction }}
+                                    </span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Confianza:</span>
+                                    <span class="text-lg font-semibold text-gray-900 dark:text-white ml-1">
+                                        {{ analysis.summary?.main_trend?.confidence }}%
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resumen Ejecutivo -->
+                    <div class="mb-6">
+                        <div class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900 dark:to-emerald-900 rounded-lg p-4">
+                            <h3 class="text-lg font-semibold mb-3 text-gray-900 dark:text-white flex items-center">
+                                <i class="fas fa-bullseye mr-2 text-green-600"></i>
+                                Resumen Ejecutivo
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <span class="text-xl mr-2">{{ analysis.summary?.executive_summary?.bias_emoji }}</span>
+                                    <span class="text-lg font-bold text-gray-900 dark:text-white">
+                                        Sesgo {{ analysis.summary?.executive_summary?.bias }}
+                                    </span>
+                                </div>
+                                <div v-if="analysis.summary?.executive_summary?.key_factors?.length > 0">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Factores Clave:</span>
+                                    <div class="flex flex-wrap gap-2 mt-1">
+                                        <span v-for="factor in analysis.summary?.executive_summary?.key_factors"
+                                              :key="factor"
+                                              class="px-2 py-1 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-xs">
+                                            {{ factor }}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 rounded p-3 border-l-4 border-blue-500">
+                                    <span class="text-sm font-medium text-gray-900 dark:text-white">
+                                        💡 {{ analysis.summary?.executive_summary?.recommendation }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid de Indicadores -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Niveles Clave -->
+                        <div v-if="analysis.summary?.key_levels" class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <h4 class="font-semibold mb-3 text-gray-900 dark:text-white flex items-center">
+                                <i class="fas fa-layer-group mr-2 text-purple-600"></i>
+                                Niveles Clave
+                            </h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">Resistencia:</span>
+                                    <span class="font-semibold text-red-600">{{ formatToPips(analysis.summary?.key_levels?.resistance) }}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">Soporte:</span>
+                                    <span class="font-semibold text-green-600">{{ formatToPips(analysis.summary?.key_levels?.support) }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Indicadores Técnicos -->
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <h4 class="font-semibold mb-3 text-gray-900 dark:text-white flex items-center">
+                                <i class="fas fa-chart-line mr-2 text-blue-600"></i>
+                                Técnicos
+                            </h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">RSI:</span>
+                                    <div class="flex items-center">
+                                        <span class="mr-1">{{ analysis.summary?.technical_indicators?.rsi?.emoji }}</span>
+                                        <span class="font-semibold text-gray-900 dark:text-white">
+                                            {{ formatNumber(analysis.summary?.technical_indicators?.rsi?.value) }}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">MACD:</span>
+                                    <div class="flex items-center">
+                                        <span class="mr-1">{{ analysis.summary?.technical_indicators?.macd?.emoji }}</span>
+                                        <span class="font-semibold text-gray-900 dark:text-white">
+                                            {{ analysis.summary?.technical_indicators?.macd?.status }}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">ADX:</span>
+                                    <div class="flex items-center">
+                                        <span class="mr-1">{{ analysis.summary?.technical_indicators?.adx?.emoji }}</span>
+                                        <span class="font-semibold text-gray-900 dark:text-white">
+                                            {{ analysis.summary?.technical_indicators?.adx?.strength }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Datos del Día Anterior -->
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <h4 class="font-semibold mb-3 text-gray-900 dark:text-white flex items-center">
+                                <i class="fas fa-calendar-day mr-2 text-orange-600"></i>
+                                Día Anterior
+                            </h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">Máximo:</span>
+                                    <span class="font-semibold text-gray-900 dark:text-white">{{ formatToPips(analysis.yesterday_data?.high) }}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">Mínimo:</span>
+                                    <span class="font-semibold text-gray-900 dark:text-white">{{ formatToPips(analysis.yesterday_data?.low) }}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">Cierre:</span>
+                                    <span class="font-semibold text-gray-900 dark:text-white">{{ formatToPips(analysis.yesterday_data?.close) }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secciones Adicionales -->
+                    <div class="grid md:grid-cols-2 gap-4 mt-6">
+                        <!-- Volumen y Sentimiento -->
+                        <div class="space-y-4">
+                            <!-- Volumen -->
+                            <div class="bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
+                                <h4 class="font-semibold mb-2 text-blue-800 dark:text-blue-200 flex items-center">
+                                    <i class="fas fa-chart-bar mr-2"></i>
+                                    Volumen
+                                </h4>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-blue-600 dark:text-blue-300">RVOL:</span>
+                                    <div class="flex items-center">
+                                        <span class="mr-1">{{ analysis.summary?.volume_analysis?.emoji }}</span>
+                                        <span class="font-semibold text-blue-800 dark:text-blue-200">
+                                            {{ formatNumber(analysis.summary?.volume_analysis?.rvol) }}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div v-if="analysis.summary?.volume_analysis?.big_prints_detected"
+                                     class="mt-2 text-xs text-orange-600 dark:text-orange-400">
+                                    ⚠️ Big Prints Detectados
+                                </div>
+                            </div>
+
+                            <!-- Sentimiento de Mercado -->
+                            <div v-if="analysis.summary?.market_sentiment" class="bg-purple-50 dark:bg-purple-900 rounded-lg p-4">
+                                <h4 class="font-semibold mb-2 text-purple-800 dark:text-purple-200 flex items-center">
+                                    <i class="fas fa-heart-pulse mr-2"></i>
+                                    Sentimiento
+                                </h4>
+                                <div class="space-y-2 text-sm">
+                                    <div v-if="analysis.summary?.market_sentiment?.vix" class="flex items-center justify-between">
+                                        <span class="text-purple-600 dark:text-purple-300">VIX:</span>
+                                        <div class="flex items-center">
+                                            <span class="mr-1">{{ analysis.summary?.market_sentiment?.vix?.emoji }}</span>
+                                            <span class="font-semibold text-purple-800 dark:text-purple-200">
+                                                {{ formatNumber(analysis.summary?.market_sentiment?.vix?.value) }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div v-if="analysis.summary?.market_sentiment?.tick" class="flex items-center justify-between">
+                                        <span class="text-purple-600 dark:text-purple-300">TICK:</span>
+                                        <div class="flex items-center">
+                                            <span class="mr-1">{{ analysis.summary?.market_sentiment?.tick?.emoji }}</span>
+                                            <span class="font-semibold text-purple-800 dark:text-purple-200">
+                                                {{ analysis.summary?.market_sentiment?.tick?.value }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Señales y Predicción -->
+                        <div class="space-y-4">
+                            <!-- Señales Intradía -->
+                            <div v-if="analysis.summary?.intraday_signals?.length > 0" class="bg-green-50 dark:bg-green-900 rounded-lg p-4">
+                                <h4 class="font-semibold mb-2 text-green-800 dark:text-green-200 flex items-center">
+                                    <i class="fas fa-signal mr-2"></i>
+                                    Señales Intradía
+                                </h4>
+                                <div class="space-y-1">
+                                    <div v-for="signal in analysis.summary?.intraday_signals"
+                                         :key="signal.timeframe + signal.signal"
+                                         class="flex items-center text-sm">
+                                        <span class="mr-2">{{ signal.emoji }}</span>
+                                        <span class="text-green-700 dark:text-green-300">
+                                            {{ signal.signal }} ({{ signal.timeframe }})
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Predicción Probabilística -->
+                            <div v-if="analysis.summary?.probabilistic_prediction?.prediction" class="bg-yellow-50 dark:bg-yellow-900 rounded-lg p-4">
+                                <h4 class="font-semibold mb-2 text-yellow-800 dark:text-yellow-200 flex items-center">
+                                    <i class="fas fa-dice mr-2"></i>
+                                    Predicción
+                                </h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-yellow-600 dark:text-yellow-300">Tendencia:</span>
+                                        <div class="flex items-center">
+                                            <span class="mr-1">{{ analysis.summary?.probabilistic_prediction?.emoji }}</span>
+                                            <span class="font-semibold text-yellow-800 dark:text-yellow-200">
+                                                {{ analysis.summary?.probabilistic_prediction?.prediction }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-yellow-600 dark:text-yellow-300">Confianza:</span>
+                                        <span class="font-semibold text-yellow-800 dark:text-yellow-200">
+                                            {{ formatNumber(analysis.summary?.probabilistic_prediction?.confidence) }}%
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Indicators -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg card-shadow dark:card-shadow-dark p-6">
+                    <h2 class="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
+                        <i class="fas fa-cogs mr-3 text-purple-600"></i>
+                        Indicadores Técnicos
+                    </h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
+                            <h3 class="font-semibold text-blue-800 dark:text-blue-200 mb-3">RSI (14)</h3>
+                            <div class="text-2xl font-bold text-blue-600">{{ formatNumber(analysis.technical_indicators?.rsi) }}</div>
+                            <div class="text-sm text-gray-600 mt-1">
+                                {{ getRSIStatus(analysis.technical_indicators?.rsi) }}
+                            </div>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-4">
+                            <h3 class="font-semibold text-green-800 mb-3">MACD</h3>
+                            <div class="text-lg font-bold text-green-600">{{ formatNumber(analysis.technical_indicators?.macd) }}</div>
+                            <div class="text-sm text-gray-600">Señal: {{ formatNumber(analysis.technical_indicators?.macd_signal) }}</div>
+                        </div>
+                        <div class="bg-yellow-50 rounded-lg p-4">
+                            <h3 class="font-semibold text-yellow-800 mb-3">SMA 20</h3>
+                            <div class="text-lg font-bold text-yellow-600">{{ formatNumber(analysis.technical_indicators?.sma_20) }}</div>
+                            <div class="text-sm text-gray-600">Media móvil simple</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Levels -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg card-shadow dark:card-shadow-dark p-6">
+                    <h2 class="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
+                        <i class="fas fa-layer-group mr-3 text-indigo-600"></i>
+                        Niveles Clave del Día
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold mb-4 text-red-600">Resistencias</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center p-3 bg-red-50 dark:bg-red-900 rounded text-gray-900 dark:text-white">
+                                    <span>Resistencia 1:</span>
+                                    <span class="font-semibold">{{ formatNumber(analysis.daily_levels?.resistance_1) }}</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-red-50 dark:bg-red-900 rounded text-gray-900 dark:text-white">
+                                    <span>Resistencia 2:</span>
+                                    <span class="font-semibold">{{ formatNumber(analysis.daily_levels?.resistance_2) }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-4 text-green-600">Soportes</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center p-3 bg-green-50 dark:bg-green-900 rounded text-gray-900 dark:text-white">
+                                    <span>Soporte 1:</span>
+                                    <span class="font-semibold">{{ formatNumber(analysis.daily_levels?.support_1) }}</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-green-50 dark:bg-green-900 rounded text-gray-900 dark:text-white">
+                                    <span>Soporte 2:</span>
+                                    <span class="font-semibold">{{ formatNumber(analysis.daily_levels?.support_2) }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded text-gray-900 dark:text-white">
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Punto Pivote</div>
+                            <div class="font-semibold">{{ formatNumber(analysis.daily_levels?.pivot_point) }}</div>
+                        </div>
+                        <div class="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded text-gray-900 dark:text-white">
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Fibonacci 38.2%</div>
+                            <div class="font-semibold">{{ formatNumber(analysis.daily_levels?.fibonacci_38_2) }}</div>
+                        </div>
+                        <div class="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded text-gray-900 dark:text-white">
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Fibonacci 61.8%</div>
+                            <div class="font-semibold">{{ formatNumber(analysis.daily_levels?.fibonacci_61_8) }}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signals -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg card-shadow dark:card-shadow-dark p-6">
+                    <h2 class="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
+                        <i class="fas fa-signal mr-3 text-orange-600"></i>
+                        Señales de Trading
+                    </h2>
+                    <div class="space-y-3">
+                        <div v-for="signal in analysis.trend_analysis?.signals" :key="signal"
+                             class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg text-gray-900 dark:text-white">
+                            <i class="fas fa-arrow-right text-blue-500 mr-3"></i>
+                            <span>{{ signal }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Section -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg card-shadow dark:card-shadow-dark p-6">
+                    <h2 class="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
+                        <i class="fas fa-chart-line mr-3 text-green-600"></i>
+                        📊 Gráfico NAS100 - 15 Minutos (7:00 - 22:00) - Puntos de Índice
+                    </h2>
+                    <div class="relative h-96">
+                        <canvas id="priceChart" class="w-full h-full"></canvas>
+                    </div>
+                    <div class="chart-info mt-4 p-3 bg-gray-50 dark:bg-gray-700 rounded text-gray-900 dark:text-white">
+                        <div v-if="chartData" class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div>
+                                <span class="text-gray-600 dark:text-gray-400">Apertura:</span>
+                                <span class="font-semibold ml-2">{{ formatToPips(chartData.open) }}</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 dark:text-gray-400">Máximo:</span>
+                                <span class="font-semibold ml-2">{{ formatToPips(chartData.high) }}</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 dark:text-gray-400">Mínimo:</span>
+                                <span class="font-semibold ml-2">{{ formatToPips(chartData.low) }}</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 dark:text-gray-400">Cierre:</span>
+                                <span class="font-semibold ml-2">{{ formatToPips(chartData.close) }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intraday Analysis Section -->
+                <div v-if="analysis && analysis.intraday_analysis" class="bg-white dark:bg-gray-800 rounded-lg card-shadow dark:card-shadow-dark p-6">
+                    <h2 class="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
+                        <i class="fas fa-clock mr-3 text-purple-600"></i>
+                        ⚡ Análisis Intradía para Day Trading
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <!-- 1 Minute Analysis -->
+                        <div v-if="analysis && analysis.intraday_analysis && analysis.intraday_analysis['1m']" class="border dark:border-gray-600 rounded-lg p-4 bg-white dark:bg-gray-700">
+                            <h3 class="font-semibold text-lg mb-3 text-blue-600">📈 1 Minuto (Scalping)</h3>
+                            <div class="space-y-2 text-sm text-gray-900 dark:text-gray-300">
+                                <div class="flex justify-between">
+                                    <span>Tendencia:</span>
+                                    <span :class="analysis.intraday_analysis['1m'].trend_short === 'bullish' ? 'text-green-600 font-semibold' : 'text-red-600 font-semibold'">
+                                        {{ analysis.intraday_analysis['1m'].trend_short === 'bullish' ? '🟢 Alcista' : '🔴 Bajista' }}
+                                    </span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>RSI:</span>
+                                    <span :class="getRSIColor(analysis.intraday_analysis['1m'].rsi)">{{ analysis.intraday_analysis['1m'].rsi?.toFixed(2) }}</span>
+                                </div>
+                                <div v-if="analysis.intraday_analysis['1m'].scalp_buy_signal" class="bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200 p-2 rounded text-center font-semibold">
+                                    🚀 SEÑAL DE COMPRA
+                                </div>
+                                <div v-if="analysis.intraday_analysis['1m'].scalp_sell_signal" class="bg-red-100 dark:bg-red-800 text-red-800 dark:text-red-200 p-2 rounded text-center font-semibold">
+                                    📉 SEÑAL DE VENTA
+                                </div>
+                                <div v-if="analysis.intraday_analysis['1m'].range_trading" class="bg-yellow-100 dark:bg-yellow-800 text-yellow-800 dark:text-yellow-200 p-2 rounded text-center">
+                                    📊 MERCADO EN RANGO
+                                </div>
+                                <div v-if="analysis.intraday_analysis['1m'].atr_stop_long" class="mt-3 p-2 bg-gray-100 dark:bg-gray-600 rounded">
+                                    <div class="text-xs text-gray-600 dark:text-gray-400">Stop Loss Sugerido:</div>
+                                    <div class="text-green-600">Long: {{ formatToPips(analysis.intraday_analysis['1m'].atr_stop_long) }}</div>
+                                    <div class="text-red-600">Short: {{ formatToPips(analysis.intraday_analysis['1m'].atr_stop_short) }}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5 Minute Analysis -->
+                        <div v-if="analysis && analysis.intraday_analysis && analysis.intraday_analysis['5m']" class="border dark:border-gray-600 rounded-lg p-4 bg-white dark:bg-gray-700">
+                            <h3 class="font-semibold text-lg mb-3 text-green-600">📊 5 Minutos</h3>
+                            <div class="space-y-2 text-sm text-gray-900 dark:text-gray-300">
+                                <div class="flex justify-between">
+                                    <span>Tendencia:</span>
+                                    <span :class="analysis.intraday_analysis['5m'].trend_short === 'bullish' ? 'text-green-600 font-semibold' : 'text-red-600 font-semibold'">
+                                        {{ analysis.intraday_analysis['5m'].trend_short === 'bullish' ? '🟢 Alcista' : '🔴 Bajista' }}
+                                    </span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>RSI:</span>
+                                    <span :class="getRSIColor(analysis.intraday_analysis['5m'].rsi)">{{ analysis.intraday_analysis['5m'].rsi?.toFixed(2) }}</span>
+                                </div>
+                                <div v-if="analysis.intraday_analysis['5m'].ema_bullish_cross" class="bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200 p-2 rounded text-center">
+                                    ⬆️ CRUCE ALCISTA EMAs
+                                </div>
+                                <div v-if="analysis.intraday_analysis['5m'].ema_bearish_cross" class="bg-red-100 dark:bg-red-800 text-red-800 dark:text-red-200 p-2 rounded text-center">
+                                    ⬇️ CRUCE BAJISTA EMAs
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Momentum 5:</span>
+                                    <span :class="analysis.intraday_analysis['5m'].momentum_5 > 0 ? 'text-green-600' : 'text-red-600'">
+                                        {{ analysis.intraday_analysis['5m'].momentum_5?.toFixed(2) }}%
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 15 Minute Analysis -->
+                        <div v-if="analysis && analysis.intraday_analysis && analysis.intraday_analysis['15m']" class="border dark:border-gray-600 rounded-lg p-4 bg-white dark:bg-gray-700">
+                            <h3 class="font-semibold text-lg mb-3 text-purple-600">⏰ 15 Minutos</h3>
+                            <div class="space-y-2 text-sm text-gray-900 dark:text-gray-300">
+                                <div class="flex justify-between">
+                                    <span>Tendencia:</span>
+                                    <span :class="analysis.intraday_analysis['15m'].trend_short === 'bullish' ? 'text-green-600 font-semibold' : 'text-red-600 font-semibold'">
+                                        {{ analysis.intraday_analysis['15m'].trend_short === 'bullish' ? '🟢 Alcista' : '🔴 Bajista' }}
+                                    </span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>RSI:</span>
+                                    <span :class="getRSIColor(analysis.intraday_analysis['15m'].rsi)">{{ analysis.intraday_analysis['15m'].rsi?.toFixed(2) }}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>MACD:</span>
+                                    <span :class="analysis.intraday_analysis['15m'].macd_bullish ? 'text-green-600' : 'text-red-600'">
+                                        {{ analysis.intraday_analysis['15m'].macd_bullish ? '🟢 Alcista' : '🔴 Bajista' }}
+                                    </span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Soporte:</span>
+                                    <span class="text-blue-600">{{ formatToPips(analysis.intraday_analysis['15m'].support_level) }}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Resistencia:</span>
+                                    <span class="text-red-600">{{ formatToPips(analysis.intraday_analysis['15m'].resistance_level) }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4 Hour Analysis -->
+                        <div v-if="analysis && analysis.intraday_analysis && analysis.intraday_analysis['4h']" class="border dark:border-gray-600 rounded-lg p-4 bg-white dark:bg-gray-700">
+                            <h3 class="font-semibold text-lg mb-3 text-orange-600">🕐 4 Horas</h3>
+                            <div class="space-y-2 text-sm text-gray-900 dark:text-gray-300">
+                                <div class="flex justify-between">
+                                    <span>Tendencia:</span>
+                                    <span :class="analysis.intraday_analysis['4h'].trend_short === 'bullish' ? 'text-green-600 font-semibold' : 'text-red-600 font-semibold'">
+                                        {{ analysis.intraday_analysis['4h'].trend_short === 'bullish' ? '🟢 Alcista' : '🔴 Bajista' }}
+                                    </span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>RSI:</span>
+                                    <span :class="getRSIColor(analysis.intraday_analysis['4h'].rsi)">{{ analysis.intraday_analysis['4h'].rsi?.toFixed(2) }}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>MACD:</span>
+                                    <span :class="analysis.intraday_analysis['4h'].macd_bullish ? 'text-green-600' : 'text-red-600'">
+                                        {{ analysis.intraday_analysis['4h'].macd_bullish ? '🟢 Alcista' : '🔴 Bajista' }}
+                                    </span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>EMA 50:</span>
+                                    <span class="text-blue-600">{{ formatToPips(analysis.intraday_analysis['4h'].ema_50) }}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Volumen:</span>
+                                    <span :class="analysis.intraday_analysis['4h'].volume_above_average ? 'text-green-600' : 'text-red-600'">
+                                        {{ analysis.intraday_analysis['4h'].volume_above_average ? '🔊 Alto' : '🔉 Bajo' }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1 Day Analysis -->
+                        <div v-if="analysis && analysis.intraday_analysis && analysis.intraday_analysis['1d']" class="border dark:border-gray-600 rounded-lg p-4 bg-white dark:bg-gray-700">
+                            <h3 class="font-semibold text-lg mb-3 text-indigo-600">📅 1 Día</h3>
+                            <div class="space-y-2 text-sm text-gray-900 dark:text-gray-300">
+                                <div class="flex justify-between">
+                                    <span>Tendencia:</span>
+                                    <span :class="analysis.intraday_analysis['1d'].trend_short === 'bullish' ? 'text-green-600 font-semibold' : 'text-red-600 font-semibold'">
+                                        {{ analysis.intraday_analysis['1d'].trend_short === 'bullish' ? '🟢 Alcista' : '🔴 Bajista' }}
+                                    </span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>RSI:</span>
+                                    <span :class="getRSIColor(analysis.intraday_analysis['1d'].rsi)">{{ analysis.intraday_analysis['1d'].rsi?.toFixed(2) }}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>SMA 20:</span>
+                                    <span class="text-blue-600">{{ formatToPips(analysis.intraday_analysis['1d'].sma_20) }}</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>SMA 50:</span>
+                                    <span class="text-purple-600">{{ formatToPips(analysis.intraday_analysis['1d'].sma_50) }}</span>
+                                </div>
+                                <div v-if="analysis.intraday_analysis['1d'].golden_cross" class="bg-yellow-100 dark:bg-yellow-800 text-yellow-800 dark:text-yellow-200 p-2 rounded text-center">
+                                    ⭐ GOLDEN CROSS
+                                </div>
+                                <div v-if="analysis.intraday_analysis['1d'].death_cross" class="bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-200 p-2 rounded text-center">
+                                    💀 DEATH CROSS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Section -->
+                <div v-if="analysis.news && analysis.news.length > 0" class="bg-white dark:bg-gray-800 rounded-lg card-shadow dark:card-shadow-dark p-6">
+                    <h2 class="text-xl font-semibold mb-6 flex items-center text-gray-900 dark:text-white">
+                        <i class="fas fa-newspaper mr-3 text-blue-600"></i>
+                        Noticias Relevantes
+                    </h2>
+                    <div class="space-y-4">
+                        <div v-for="news in analysis.news" :key="news.title"
+                             class="border-l-4 border-blue-500 pl-4 py-2">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">{{ news.title }}</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">{{ news.summary }}</p>
+                            <div class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                                <span>{{ news.source }}</span> •
+                                <span>{{ formatDateTime(news.timestamp) }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-8 mt-12">
+            <div class="container mx-auto px-4 text-center">
+                <p>&copy; 2024 EconomeJuice. Análisis técnico automatizado del NASDAQ 100.</p>
+                <p class="text-sm text-gray-400 mt-2">Los datos son solo para fines informativos y no constituyen asesoramiento financiero.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

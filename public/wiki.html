@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki - Indicadores Técnicos | EconomeJuice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .dark .card-shadow-dark { box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-book text-3xl"></i>
+                    <div>
+                        <h1 class="text-3xl font-bold">Wiki de Indicadores Técnicos</h1>
+                        <p class="text-lg opacity-90">Guía completa de análisis técnico</p>
+                    </div>
+                </div>
+                <a href="index.html" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Volver al Dashboard</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        <!-- Tabla de Contenidos -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg card-shadow p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center">
+                <i class="fas fa-list mr-3 text-blue-600"></i>
+                Tabla de Contenidos
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="#rsi" class="block p-3 bg-blue-50 dark:bg-blue-900 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800 transition-colors">
+                    <i class="fas fa-chart-line mr-2 text-blue-600"></i>RSI (Relative Strength Index)
+                </a>
+                <a href="#macd" class="block p-3 bg-green-50 dark:bg-green-900 rounded-lg hover:bg-green-100 dark:hover:bg-green-800 transition-colors">
+                    <i class="fas fa-wave-square mr-2 text-green-600"></i>MACD
+                </a>
+                <a href="#adx" class="block p-3 bg-purple-50 dark:bg-purple-900 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-800 transition-colors">
+                    <i class="fas fa-trending-up mr-2 text-purple-600"></i>ADX (Average Directional Index)
+                </a>
+                <a href="#bollinger" class="block p-3 bg-yellow-50 dark:bg-yellow-900 rounded-lg hover:bg-yellow-100 dark:hover:bg-yellow-800 transition-colors">
+                    <i class="fas fa-compress-arrows-alt mr-2 text-yellow-600"></i>Bandas de Bollinger
+                </a>
+                <a href="#volume" class="block p-3 bg-red-50 dark:bg-red-900 rounded-lg hover:bg-red-100 dark:hover:bg-red-800 transition-colors">
+                    <i class="fas fa-chart-bar mr-2 text-red-600"></i>Análisis de Volumen
+                </a>
+                <a href="#sentiment" class="block p-3 bg-indigo-50 dark:bg-indigo-900 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-800 transition-colors">
+                    <i class="fas fa-heart-pulse mr-2 text-indigo-600"></i>Indicadores de Sentimiento
+                </a>
+            </div>
+        </div>
+
+        <!-- RSI Section -->
+        <section id="rsi" class="bg-white dark:bg-gray-800 rounded-lg card-shadow p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center">
+                <i class="fas fa-chart-line mr-3 text-blue-600"></i>
+                RSI (Relative Strength Index)
+            </h2>
+            <div class="space-y-4">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    El RSI es un oscilador de momentum que mide la velocidad y magnitud de los cambios de precio. 
+                    Oscila entre 0 y 100 y se utiliza para identificar condiciones de sobrecompra y sobreventa.
+                </p>
+                
+                <div class="bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
+                    <h3 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Interpretación de Valores:</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-700 dark:text-blue-300">RSI > 70:</span>
+                            <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded">🔴 Sobrecompra - Posible corrección bajista</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-700 dark:text-blue-300">RSI 30-70:</span>
+                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded">🟡 Neutral - Rango normal</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-700 dark:text-blue-300">RSI < 30:</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">🟢 Sobreventa - Posible rebote alcista</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Ejemplos Prácticos:</h3>
+                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li><strong>RSI = 85:</strong> Mercado en sobrecompra extrema, considerar ventas o esperar corrección</li>
+                        <li><strong>RSI = 45:</strong> Condiciones neutrales, seguir la tendencia principal</li>
+                        <li><strong>RSI = 25:</strong> Mercado en sobreventa, buscar oportunidades de compra</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- MACD Section -->
+        <section id="macd" class="bg-white dark:bg-gray-800 rounded-lg card-shadow p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center">
+                <i class="fas fa-wave-square mr-3 text-green-600"></i>
+                MACD (Moving Average Convergence Divergence)
+            </h2>
+            <div class="space-y-4">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    El MACD es un indicador de seguimiento de tendencia que muestra la relación entre dos medias móviles exponenciales. 
+                    Consiste en la línea MACD, la línea de señal y el histograma.
+                </p>
+                
+                <div class="bg-green-50 dark:bg-green-900 rounded-lg p-4">
+                    <h3 class="font-semibold text-green-800 dark:text-green-200 mb-2">Estados del MACD:</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-green-700 dark:text-green-300">MACD > Señal:</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">🟢 ALCISTA - Momentum positivo</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-green-700 dark:text-green-300">MACD < Señal:</span>
+                            <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded">🔴 BAJISTA - Momentum negativo</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-green-700 dark:text-green-300">Cruce alcista:</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">📈 Señal de compra</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-green-700 dark:text-green-300">Cruce bajista:</span>
+                            <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded">📉 Señal de venta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Ejemplos de Interpretación:</h3>
+                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li><strong>MACD = 15, Señal = 10:</strong> Momentum alcista fuerte, considerar posiciones largas</li>
+                        <li><strong>MACD = -8, Señal = -5:</strong> Momentum bajista, evaluar ventas en corto</li>
+                        <li><strong>Histograma creciente:</strong> El momentum se está acelerando en la dirección actual</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADX Section -->
+        <section id="adx" class="bg-white dark:bg-gray-800 rounded-lg card-shadow p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center">
+                <i class="fas fa-trending-up mr-3 text-purple-600"></i>
+                ADX (Average Directional Index)
+            </h2>
+            <div class="space-y-4">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    El ADX mide la fuerza de una tendencia, sin indicar su dirección. Se complementa con +DI y -DI 
+                    para determinar tanto la fuerza como la dirección de la tendencia.
+                </p>
+                
+                <div class="bg-purple-50 dark:bg-purple-900 rounded-lg p-4">
+                    <h3 class="font-semibold text-purple-800 dark:text-purple-200 mb-2">Niveles de Fuerza de Tendencia:</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 dark:text-purple-300">ADX > 50:</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">💪 FUERTE - Tendencia muy sólida</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 dark:text-purple-300">ADX 25-50:</span>
+                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded">📊 MODERADA - Tendencia establecida</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 dark:text-purple-300">ADX < 25:</span>
+                            <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded">🔴 DÉBIL - Mercado lateral</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Interpretación con DI:</h3>
+                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li><strong>+DI > -DI + ADX > 25:</strong> Tendencia alcista fuerte</li>
+                        <li><strong>-DI > +DI + ADX > 25:</strong> Tendencia bajista fuerte</li>
+                        <li><strong>ADX < 20:</strong> Mercado en rango, evitar estrategias de tendencia</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bollinger Bands Section -->
+        <section id="bollinger" class="bg-white dark:bg-gray-800 rounded-lg card-shadow p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center">
+                <i class="fas fa-compress-arrows-alt mr-3 text-yellow-600"></i>
+                Bandas de Bollinger
+            </h2>
+            <div class="space-y-4">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Las Bandas de Bollinger consisten en una media móvil central y dos bandas de desviación estándar. 
+                    Ayudan a identificar niveles de sobrecompra/sobreventa y períodos de alta/baja volatilidad.
+                </p>
+                
+                <div class="bg-yellow-50 dark:bg-yellow-900 rounded-lg p-4">
+                    <h3 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Interpretación de Posición:</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-yellow-700 dark:text-yellow-300">Precio > Banda Superior:</span>
+                            <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded">🔴 Sobrecompra potencial</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-yellow-700 dark:text-yellow-300">Precio en Media:</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">🔵 Zona neutral</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-yellow-700 dark:text-yellow-300">Precio < Banda Inferior:</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">🟢 Sobreventa potencial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Squeeze de Bollinger:</h3>
+                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li><strong>Bandas estrechas:</strong> Baja volatilidad, posible ruptura inminente</li>
+                        <li><strong>Bandas amplias:</strong> Alta volatilidad, movimientos fuertes en curso</li>
+                        <li><strong>Squeeze = 1:</strong> Período de compresión, prepararse para expansión</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volume Analysis Section -->
+        <section id="volume" class="bg-white dark:bg-gray-800 rounded-lg card-shadow p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center">
+                <i class="fas fa-chart-bar mr-3 text-red-600"></i>
+                Análisis de Volumen
+            </h2>
+            <div class="space-y-4">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    El análisis de volumen confirma la fuerza de los movimientos de precio. 
+                    Incluye RVOL (Volumen Relativo) y detección de "Big Prints" (operaciones grandes).
+                </p>
+                
+                <div class="bg-red-50 dark:bg-red-900 rounded-lg p-4">
+                    <h3 class="font-semibold text-red-800 dark:text-red-200 mb-2">RVOL (Volumen Relativo):</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-red-700 dark:text-red-300">RVOL > 2.0:</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">🟢 ALTO - Interés institucional fuerte</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-red-700 dark:text-red-300">RVOL 1.0-2.0:</span>
+                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded">🟡 NORMAL - Actividad típica</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-red-700 dark:text-red-300">RVOL < 1.0:</span>
+                            <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded">🔴 BAJO - Falta de convicción</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Big Prints:</h3>
+                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li><strong>Big Prints Detectados:</strong> Operaciones institucionales grandes, posible cambio de dirección</li>
+                        <li><strong>Sin Big Prints:</strong> Flujo de órdenes normal, seguir análisis técnico estándar</li>
+                        <li><strong>Volumen + Precio:</strong> Volumen alto con movimiento de precio confirma la dirección</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sentiment Indicators Section -->
+        <section id="sentiment" class="bg-white dark:bg-gray-800 rounded-lg card-shadow p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center">
+                <i class="fas fa-heart-pulse mr-3 text-indigo-600"></i>
+                Indicadores de Sentimiento
+            </h2>
+            <div class="space-y-4">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Los indicadores de sentimiento miden el estado emocional del mercado, incluyendo VIX (miedo), 
+                    TICK Index (breadth del mercado) y Order Flow (presión compradora/vendedora).
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-indigo-50 dark:bg-indigo-900 rounded-lg p-4">
+                        <h3 class="font-semibold text-indigo-800 dark:text-indigo-200 mb-2">VIX (Índice de Volatilidad):</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center justify-between">
+                                <span class="text-indigo-700 dark:text-indigo-300">VIX > 30:</span>
+                                <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">😰 MIEDO - Oportunidad contraria</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-indigo-700 dark:text-indigo-300">VIX 15-30:</span>
+                                <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded text-xs">😐 NEUTRAL - Volatilidad normal</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-indigo-700 dark:text-indigo-300">VIX < 15:</span>
+                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">😊 COMPLACENCIA - Cuidado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-50 dark:bg-purple-900 rounded-lg p-4">
+                        <h3 class="font-semibold text-purple-800 dark:text-purple-200 mb-2">TICK Index:</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center justify-between">
+                                <span class="text-purple-700 dark:text-purple-300">TICK > +800:</span>
+                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">🟢 ALCISTA fuerte</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-purple-700 dark:text-purple-300">TICK ±200:</span>
+                                <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded text-xs">🟡 NEUTRAL</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-purple-700 dark:text-purple-300">TICK < -800:</span>
+                                <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">🔴 BAJISTA fuerte</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Order Flow (Flujo de Órdenes):</h3>
+                    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li><strong>Buy Pressure > 60%:</strong> Dominio comprador, sesgo alcista</li>
+                        <li><strong>Buy Pressure 40-60%:</strong> Equilibrio, seguir otros indicadores</li>
+                        <li><strong>Buy Pressure < 40%:</strong> Dominio vendedor, sesgo bajista</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <div class="bg-yellow-50 dark:bg-yellow-900 border-l-4 border-yellow-400 p-4 rounded-lg">
+            <div class="flex items-start">
+                <i class="fas fa-exclamation-triangle text-yellow-600 mr-3 mt-1"></i>
+                <div>
+                    <h3 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Aviso Importante</h3>
+                    <p class="text-sm text-yellow-700 dark:text-yellow-300">
+                        Esta información es solo para fines educativos. Los indicadores técnicos no garantizan resultados futuros. 
+                        Siempre combine múltiples indicadores y considere el contexto del mercado antes de tomar decisiones de trading.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 EconomeJuice. Análisis técnico educativo.</p>
+        </div>
+    </footer>
+</body>
+</html>
