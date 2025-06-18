@@ -24,12 +24,16 @@ on:
 jobs:
   manual-update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
           
       - name: Setup Python
         uses: actions/setup-python@v4
