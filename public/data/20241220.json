@@ -1,0 +1,63 @@
+{
+  "date": "2024-12-20",
+  "timestamp": "2024-12-20T07:00:00.000Z",
+  "symbol": "^NDX",
+  "yesterday_data": {
+    "high": 21456.78,
+    "low": 21298.45,
+    "close": 21389.12,
+    "volume": 3250000000
+  },
+  "technical_indicators": {
+    "rsi": 62.3,
+    "sma_20": 21345.67,
+    "sma_50": 21280.34,
+    "macd": 78.5,
+    "macd_signal": 72.1,
+    "macd_histogram": 6.4,
+    "bb_upper": 21520.89,
+    "bb_middle": 21345.67,
+    "bb_lower": 21170.45,
+    "last_close": 21389.12,
+    "last_high": 21456.78,
+    "last_low": 21298.45,
+    "last_volume": 3250000000
+  },
+  "trend_analysis": {
+    "trend": "bullish",
+    "confidence": 75.8,
+    "signals": [
+      "RSI en zona neutral (62.3) - sin señales extremas",
+      "MACD por encima de señal - tendencia alcista",
+      "Precio por encima de SMA20 - momentum positivo",
+      "Precio por encima de SMA50 - tendencia de largo plazo alcista",
+      "Volumen por encima del promedio - confirmación de movimiento"
+    ],
+    "bullish_signals": 4,
+    "bearish_signals": 0
+  },
+  "daily_levels": {
+    "resistance_1": 21520.89,
+    "resistance_2": 21650.00,
+    "support_1": 21170.45,
+    "support_2": 21050.00,
+    "fibonacci_38": 21390.25,
+    "fibonacci_62": 21320.80,
+    "pivot_point": 21381.45
+  },
+  "news": [
+    {
+      "title": "NASDAQ 100 mantiene momentum alcista en sesión previa",
+      "summary": "El índice tecnológico cerró con ganancias moderadas, impulsado por el sector de semiconductores y empresas de software. Los inversores muestran optimismo ante las próximas festividades.",
+      "source": "Análisis técnico automatizado",
+      "timestamp": "2024-12-20T06:30:00.000Z"
+    },
+    {
+      "title": "Indicadores técnicos sugieren continuación de tendencia",
+      "summary": "Los principales indicadores técnicos como RSI y MACD mantienen señales positivas, aunque se recomienda cautela cerca de niveles de resistencia clave.",
+      "source": "Sistema de análisis",
+      "timestamp": "2024-12-20T06:45:00.000Z"
+    }
+  ],
+  "summary": "Análisis NASDAQ 100 - Tendencia bullish con 75.8% de confianza. Resistencia clave en 21520.89, soporte en 21170.45. RSI en zona neutral sin señales extremas. MACD confirma momentum alcista con precio por encima de medias móviles principales."
+}

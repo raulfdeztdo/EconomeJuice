@@ -70,7 +70,7 @@ createApp({
 
             try {
                 const dateString = this.selectedDate.replace(/-/g, '');
-                const response = await fetch(`../data/${dateString}.json`);
+                const response = await fetch(`./data/${dateString}.json`);
 
                 if (!response.ok) {
                     if (response.status === 404) {
@@ -103,7 +103,7 @@ createApp({
 
         async loadLastUpdate() {
             try {
-                const response = await fetch('../data/last_update.json');
+                const response = await fetch('./data/last_update.json');
                 if (response.ok) {
                     const data = await response.json();
                     this.lastUpdate = new Date(data.last_update);

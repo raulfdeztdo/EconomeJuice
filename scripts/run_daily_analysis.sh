@@ -34,17 +34,30 @@ if [ $? -eq 0 ]; then
         TIMESTAMP_FILE="data/last_update.json"
         echo "{\"last_update\": \"$(date -u +%Y-%m-%dT%H:%M:%S.000Z)\", \"status\": \"success\"}" > "$TIMESTAMP_FILE"
         echo "📅 Timestamp actualizado: $TIMESTAMP_FILE"
+        
+        # Copiar archivos al directorio public/data para despliegue
+        mkdir -p public/data
+        cp data/*.json public/data/ 2>/dev/null || true
+        echo "📁 Archivos copiados a public/data para despliegue"
     else
         echo "⚠️  ADVERTENCIA: No se encontró el archivo de datos del día"
         # Crear archivo de timestamp con error
         TIMESTAMP_FILE="data/last_update.json"
         echo "{\"last_update\": \"$(date -u +%Y-%m-%dT%H:%M:%S.000Z)\", \"status\": \"error\", \"message\": \"No se encontró archivo de datos\"}" > "$TIMESTAMP_FILE"
+        
+        # Copiar timestamp de error a public/data
+        mkdir -p public/data
+        cp "$TIMESTAMP_FILE" public/data/ 2>/dev/null || true
     fi
 else
     echo "❌ Error en el análisis"
     # Crear archivo de timestamp con error
     TIMESTAMP_FILE="data/last_update.json"
     echo "{\"last_update\": \"$(date -u +%Y-%m-%dT%H:%M:%S.000Z)\", \"status\": \"error\", \"message\": \"Error ejecutando análisis\"}" > "$TIMESTAMP_FILE"
+    
+    # Copiar timestamp de error a public/data
+    mkdir -p public/data
+    cp "$TIMESTAMP_FILE" public/data/ 2>/dev/null || true
     exit 1
 fi
 

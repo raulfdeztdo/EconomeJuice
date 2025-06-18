@@ -44,7 +44,7 @@ app.post('/run-analysis', (req, res) => {
             // Intentar escribir el timestamp de error
             try {
                 fs.writeFileSync(
-                    path.join(__dirname, 'data', 'last_update.json'),
+                    path.join(__dirname, 'public', 'data', 'last_update.json'),
                     JSON.stringify(errorTimestamp, null, 2)
                 );
             } catch (writeError) {
@@ -72,7 +72,7 @@ app.post('/run-analysis', (req, res) => {
 // Ruta para servir archivos de datos
 app.get('/data/:filename', (req, res) => {
     const filename = req.params.filename;
-    const filePath = path.join(__dirname, 'data', filename);
+    const filePath = path.join(__dirname, 'public', 'data', filename);
     
     if (fs.existsSync(filePath)) {
         res.sendFile(filePath);

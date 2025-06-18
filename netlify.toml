@@ -2,8 +2,8 @@
   # Directorio de publicación (donde están los archivos web)
   publish = "public"
   
-  # Comando de construcción (instala dependencias y ejecuta el análisis)
-  command = "pip install -r requirements.txt && python src/nasdaq_analyzer.py"
+  # Comando de construcción (instala dependencias, ejecuta el análisis y copia datos)
+  command = "pip install -r requirements.txt && python src/nasdaq_analyzer.py && mkdir -p public/data && cp -r data/* public/data/ 2>/dev/null || true"
 
 [build.environment]
   # Versión de Python
