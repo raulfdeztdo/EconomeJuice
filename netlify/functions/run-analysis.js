@@ -33,13 +33,34 @@ exports.handler = async (event, context) => {
   try {
     console.log('Iniciando análisis manual desde función Netlify');
     
-    // En Netlify, el directorio de trabajo es diferente
-    const projectRoot = '/opt/build/repo';
+    // Detectar el directorio del proyecto
+    let projectRoot = process.cwd();
+    
+    // En Netlify Functions, intentar diferentes rutas
+    const possibleRoots = [
+      '/opt/build/repo',
+      process.cwd(),
+      path.join(process.cwd(), '..', '..'),
+      '/var/task'
+    ];
+    
+    for (const root of possibleRoots) {
+      const testScript = path.join(root, 'scripts', 'run_daily_analysis.sh');
+      if (fs.existsSync(testScript)) {
+        projectRoot = root;
+        break;
+      }
+    }
+    
     const scriptPath = path.join(projectRoot, 'scripts', 'run_daily_analysis.sh');
     
     // Verificar que el script existe
     if (!fs.existsSync(scriptPath)) {
-      console.error('Script no encontrado:', scriptPath);
+      console.error('Script no encontrado en ninguna ubicación');
+      console.error('Rutas probadas:', possibleRoots.map(root => path.join(root, 'scripts', 'run_daily_analysis.sh')));
+      console.error('Directorio actual:', process.cwd());
+      console.error('Contenido del directorio actual:', fs.readdirSync(process.cwd()));
+      
       return {
         statusCode: 500,
         headers: {
@@ -48,7 +69,8 @@ exports.handler = async (event, context) => {
         },
         body: JSON.stringify({ 
           error: 'Script de análisis no encontrado',
-          path: scriptPath 
+          cwd: process.cwd(),
+          tried_paths: possibleRoots.map(root => path.join(root, 'scripts', 'run_daily_analysis.sh'))
         })
       };
     }

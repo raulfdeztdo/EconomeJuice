@@ -11,6 +11,13 @@
   # Versión de Node.js (para funcionalidades futuras)
   NODE_VERSION = "18"
 
+# Configuración de funciones serverless
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  external_node_modules = ["child_process", "fs", "path"]
+  included_files = ["scripts/**", "src/**", "requirements.txt"]
+
 # Configuración de redirecciones
 [[redirects]]
   from = "/"
@@ -48,10 +55,6 @@
   for = "*.js"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
-
-# Configuración de funciones (para análisis automático)
-[functions]
-  directory = "netlify/functions"
 
 # Variables de entorno (configurar en Netlify UI)
 # NASDAQ_API_KEY = "tu_api_key_aqui"
