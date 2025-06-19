@@ -18,6 +18,7 @@ import logging
 from typing import Dict, List, Any
 import re
 from urllib.parse import urljoin, urlparse
+import math
 
 # Configurar logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -666,10 +667,10 @@ class NasdaqAnalyzer:
                 'rsi_overbought_scalp': int(rsi_overbought_scalp),
                 
                 # Medias móviles
-                'sma_fast': float(sma_fast_line.iloc[-1]) if not sma_fast_line.empty else None,
-                'sma_slow': float(sma_slow_line.iloc[-1]) if not sma_slow_line.empty else None,
-                'ema_fast': float(ema_fast_line.iloc[-1]) if not ema_fast_line.empty else None,
-                'ema_slow': float(ema_slow_line.iloc[-1]) if not ema_slow_line.empty else None,
+                'sma_fast': float(sma_fast_line.iloc[-1]) if not sma_fast_line.empty and not pd.isna(sma_fast_line.iloc[-1]) else None,
+                'sma_slow': float(sma_slow_line.iloc[-1]) if not sma_slow_line.empty and not pd.isna(sma_slow_line.iloc[-1]) else None,
+                'ema_fast': float(ema_fast_line.iloc[-1]) if not ema_fast_line.empty and not pd.isna(ema_fast_line.iloc[-1]) else None,
+                'ema_slow': float(ema_slow_line.iloc[-1]) if not ema_slow_line.empty and not pd.isna(ema_slow_line.iloc[-1]) else None,
                 
                 # Señales de cruce
                 'ema_bullish_cross': int(ema_bullish_cross),
@@ -1929,6 +1930,27 @@ class NasdaqAnalyzer:
              'executive_summary': executive_summary
          }
     
+    def clean_nan_values(self, obj):
+        """Recursivamente limpia valores NaN, Infinity y los convierte a None para JSON"""
+        if isinstance(obj, dict):
+            return {key: self.clean_nan_values(value) for key, value in obj.items()}
+        elif isinstance(obj, list):
+            return [self.clean_nan_values(item) for item in obj]
+        elif isinstance(obj, float):
+            if math.isnan(obj) or math.isinf(obj):
+                return None
+            return obj
+        elif isinstance(obj, np.floating):
+            if np.isnan(obj) or np.isinf(obj):
+                return None
+            return float(obj)
+        elif isinstance(obj, np.integer):
+            return int(obj)
+        elif pd.isna(obj):
+            return None
+        else:
+            return obj
+    
     def save_analysis(self, analysis: Dict[str, Any]) -> str:
         """Guardar análisis en archivo JSON"""
         if not analysis:
@@ -1939,8 +1961,11 @@ class NasdaqAnalyzer:
         filepath = os.path.join(self.data_dir, filename)
         
         try:
+            # Limpiar valores NaN antes de guardar
+            clean_analysis = self.clean_nan_values(analysis)
+            
             with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(analysis, f, indent=2, ensure_ascii=False)
+                json.dump(clean_analysis, f, indent=2, ensure_ascii=False)
             
             logger.info(f"Análisis guardado en {filepath}")
             return filepath
