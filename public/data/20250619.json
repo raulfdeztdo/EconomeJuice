@@ -1,6 +1,6 @@
 {
   "date": "2025-06-19",
-  "timestamp": "2025-06-19T20:01:13.974011",
+  "timestamp": "2025-06-19T20:35:17.439335",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 21863.0,
@@ -13554,7 +13554,7 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-06-19T20:01:13.539381",
+      "timestamp": "2025-06-19T20:35:16.944285",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
@@ -13562,16 +13562,16 @@
       "title": "Índice de Volatilidad VIX: 22.17 (+2.03)",
       "summary": "El VIX indica un sentimiento de mercado neutral. Niveles actuales suggen volatilidad moderada.",
       "source": "Análisis VIX",
-      "timestamp": "2025-06-19T20:01:13.973526",
+      "timestamp": "2025-06-19T20:35:17.438865",
       "relevance": "high",
       "sentiment": "neutral"
     },
     {
-      "title": "Decisión de Tipos de Interés de la Fed",
-      "summary": "Las decisiones de política monetaria impactan directamente en las valoraciones tecnológicas.",
+      "title": "Resultados Trimestrales de Empresas Tecnológicas",
+      "summary": "Los resultados de las principales empresas del NASDAQ 100 influyen en la dirección del índice.",
       "source": "Calendario Económico",
-      "relevance": "high",
-      "timestamp": "2025-06-19T20:01:13.973545"
+      "relevance": "medium",
+      "timestamp": "2025-06-19T20:35:17.438884"
     }
   ],
   "summary": {
