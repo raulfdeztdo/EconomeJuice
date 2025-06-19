@@ -1,6 +1,6 @@
 {
   "date": "2025-06-19",
-  "timestamp": "2025-06-19T19:31:05.640493",
+  "timestamp": "2025-06-19T20:01:13.974011",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 21863.0,
@@ -16,18 +16,18 @@
     "sma_20": 21562.6673828125,
     "sma_50": null,
     "sma_200": null,
-    "ema_12": 21728.248307934657,
-    "ema_26": 21654.392635246513,
+    "ema_12": 21730.28575927488,
+    "ema_26": 21660.200132785052,
     "ema_50": null,
     "ema_100": null,
-    "macd": 73.85567268814339,
-    "macd_signal": 76.46995944637169,
-    "macd_histogram": -2.614286758228303,
+    "macd": 70.08562648982843,
+    "macd_signal": 74.16833780609979,
+    "macd_histogram": -4.082711316271357,
     "macd_bullish": 0,
-    "bb_upper": 22162.61993636355,
+    "bb_upper": 22162.619936363546,
     "bb_middle": 21562.6673828125,
-    "bb_lower": 20962.714829261447,
-    "bb_width": 5.564734111042964,
+    "bb_lower": 20962.71482926145,
+    "bb_width": 5.56473411104293,
     "bb_squeeze": 1,
     "stoch_k": 68.08180421328855,
     "stoch_d": 75.25767011258917,
@@ -50,9 +50,9 @@
     "volume_spike": 0,
     "big_print_detected": 0,
     "average_volume": 9349480000.0,
-    "volume_std_dev": 2010579234.9993386,
+    "volume_std_dev": 2010579234.9993389,
     "volume_percentile_95": 7818790000.0,
-    "obv": 40007700000.0,
+    "obv": 51120160000.0,
     "obv_trend": "bearish",
     "last_close": 21719.689453125,
     "last_high": 21863.0,
@@ -81,11 +81,11 @@
     "bearish_weight": 4
   },
   "daily_levels": {
-    "resistance_1": 21728.248307934657,
+    "resistance_1": 21730.28575927488,
     "resistance_2": 21783.05078125,
     "resistance_3": 21831.3013515625,
     "support_1": 21674.2826484375,
-    "support_2": 21654.392635246513,
+    "support_2": 21660.200132785052,
     "support_3": 21632.47265625,
     "fibonacci_23_6": 21888.045734375,
     "fibonacci_38_2": 21831.3013515625,
@@ -101,9 +101,9 @@
     "pivot_s3": 21429.9921875,
     "atr_resistance": 21981.173270089286,
     "atr_support": 21458.205636160714,
-    "bb_upper": 22162.61993636355,
+    "bb_upper": 22162.619936363546,
     "bb_middle": 21562.6673828125,
-    "bb_lower": 20962.714829261447,
+    "bb_lower": 20962.71482926145,
     "vwap": 21577.977609265057,
     "vwap_data": {
       "vwap_20": 21577.977609265057,
@@ -13554,7 +13554,7 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-06-19T19:31:05.249272",
+      "timestamp": "2025-06-19T20:01:13.539381",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
@@ -13562,16 +13562,16 @@
       "title": "Índice de Volatilidad VIX: 22.17 (+2.03)",
       "summary": "El VIX indica un sentimiento de mercado neutral. Niveles actuales suggen volatilidad moderada.",
       "source": "Análisis VIX",
-      "timestamp": "2025-06-19T19:31:05.640014",
+      "timestamp": "2025-06-19T20:01:13.973526",
       "relevance": "high",
       "sentiment": "neutral"
     },
     {
-      "title": "Datos de Empleo No Agrícola (NFP) - Próxima publicación",
-      "summary": "Los datos de empleo estadounidense son clave para el sentimiento del mercado tecnológico.",
+      "title": "Decisión de Tipos de Interés de la Fed",
+      "summary": "Las decisiones de política monetaria impactan directamente en las valoraciones tecnológicas.",
       "source": "Calendario Económico",
       "relevance": "high",
-      "timestamp": "2025-06-19T19:31:05.640033"
+      "timestamp": "2025-06-19T20:01:13.973545"
     }
   ],
   "summary": {
@@ -13581,7 +13581,7 @@
       "emoji": "🔴"
     },
     "key_levels": {
-      "resistance": 21728.248307934657,
+      "resistance": 21730.28575927488,
       "support": 21674.2826484375
     },
     "technical_indicators": {
