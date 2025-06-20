@@ -1,12 +1,12 @@
 {
   "date": "2025-06-20",
-  "timestamp": "2025-06-20T20:34:38.248500",
+  "timestamp": "2025-06-20T21:01:05.912031",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 21902.984375,
     "low": 21552.8046875,
     "close": 21626.38671875,
-    "volume": 1953611000
+    "volume": 1955495000
   },
   "technical_indicators": {
     "rsi": 57.18968430396015,
@@ -33,7 +33,7 @@
     "stoch_d": 62.2633865684571,
     "williams_r": -49.31307089534938,
     "cci": 30.347237220590806,
-    "mfi": 57.65802711517933,
+    "mfi": 57.65715193971378,
     "adx": null,
     "plus_di": 24.394031719109062,
     "minus_di": 15.932505170897288,
@@ -50,19 +50,19 @@
       "percentage": 0.5286012358638084,
       "support_resistance_level": 21777.0947265625
     },
-    "rvol": 0.2197157678314028,
+    "rvol": 0.21992532473018803,
     "volume_above_average": 0,
     "volume_spike": 0,
     "big_print_detected": 0,
-    "average_volume": 8891537550.0,
-    "volume_std_dev": 2556752693.49846,
-    "volume_percentile_95": 1953611000.0,
-    "obv": 40876839000.0,
+    "average_volume": 8891631750.0,
+    "volume_std_dev": 2556483642.1935806,
+    "volume_percentile_95": 1955495000.0,
+    "obv": 40874955000.0,
     "obv_trend": "bullish",
     "last_close": 21626.38671875,
     "last_high": 21902.984375,
     "last_low": 21552.8046875,
-    "last_volume": 1953611000,
+    "last_volume": 1955495000,
     "daily_range": 350.1796875,
     "daily_change": -93.302734375,
     "daily_change_pct": -0.4295767422290457
@@ -89,7 +89,7 @@
     "resistance_1": 21668.743494281316,
     "resistance_2": 21717.38405228188,
     "resistance_3": 21790.946484375,
-    "support_1": 21603.59216519157,
+    "support_1": 21603.593123613806,
     "support_2": 21589.96875,
     "support_3": 21552.8046875,
     "fibonacci_23_6": 21879.005828125,
@@ -109,11 +109,11 @@
     "bb_upper": 22145.564478129556,
     "bb_middle": 21589.96875,
     "bb_lower": 21034.373021870444,
-    "vwap": 21603.59216519157,
+    "vwap": 21603.593123613806,
     "vwap_data": {
-      "vwap_20": 21603.59216519157,
-      "vwap_10": 21821.982862313173,
-      "vwap_5": 21773.804391042817,
+      "vwap_20": 21603.593123613806,
+      "vwap_10": 21821.980228042605,
+      "vwap_5": 21773.800321144714,
       "vwap_deviation_pct": 0.11,
       "above_vwap": 1
     },
@@ -11495,7 +11495,7 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-06-20T20:34:37.863875",
+      "timestamp": "2025-06-20T21:01:05.498141",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
@@ -11503,7 +11503,7 @@
       "title": "Índice de Volatilidad VIX: 20.62 (+0.48)",
       "summary": "El VIX indica un sentimiento de mercado neutral. Niveles actuales suggen volatilidad moderada.",
       "source": "Análisis VIX",
-      "timestamp": "2025-06-20T20:34:38.248004",
+      "timestamp": "2025-06-20T21:01:05.911598",
       "relevance": "high",
       "sentiment": "neutral"
     },
@@ -11512,7 +11512,7 @@
       "summary": "Los datos de empleo estadounidense son clave para el sentimiento del mercado tecnológico.",
       "source": "Calendario Económico",
       "relevance": "high",
-      "timestamp": "2025-06-20T20:34:38.248023"
+      "timestamp": "2025-06-20T21:01:05.911616"
     }
   ],
   "summary": {
@@ -11523,7 +11523,7 @@
     },
     "key_levels": {
       "resistance": 21668.743494281316,
-      "support": 21603.59216519157
+      "support": 21603.593123613806
     },
     "technical_indicators": {
       "rsi": {
@@ -11543,7 +11543,7 @@
       }
     },
     "volume_analysis": {
-      "rvol": 0.2197157678314028,
+      "rvol": 0.21992532473018803,
       "status": "BAJO",
       "big_prints_detected": 0,
       "emoji": "🔴"
