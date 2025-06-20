@@ -1,39 +1,39 @@
 {
   "date": "2025-06-20",
-  "timestamp": "2025-06-20T19:31:06.688221",
+  "timestamp": "2025-06-20T20:01:07.478026",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 21902.984375,
     "low": 21552.8046875,
-    "close": 21602.357421875,
-    "volume": 1097897000
+    "close": 21626.38671875,
+    "volume": 1264392000
   },
   "technical_indicators": {
-    "rsi": 56.50557801540493,
+    "rsi": 57.18968430396015,
     "rsi_oversold": 0,
     "rsi_overbought": 0,
-    "sma_10": 21788.5435546875,
-    "sma_20": 21588.76728515625,
+    "sma_10": 21790.946484375,
+    "sma_20": 21589.96875,
     "sma_50": null,
     "sma_200": null,
-    "ema_12": 21709.99676646461,
-    "ema_26": 21654.853310567578,
+    "ema_12": 21717.38405228188,
+    "ema_26": 21668.743494281316,
     "ema_50": null,
     "ema_100": null,
-    "macd": 55.143455897032254,
-    "macd_signal": 70.3279400066121,
-    "macd_histogram": -15.184484109579842,
+    "macd": 48.64055800056303,
+    "macd_signal": 62.364601082502915,
+    "macd_histogram": -13.724043081939882,
     "macd_bullish": 0,
-    "bb_upper": 22144.135300210022,
-    "bb_middle": 21588.76728515625,
-    "bb_lower": 21033.399270102476,
-    "bb_width": 5.144971991389489,
+    "bb_upper": 22145.564478129556,
+    "bb_middle": 21589.96875,
+    "bb_lower": 21034.373021870444,
+    "bb_width": 5.146795111776676,
     "bb_squeeze": 1,
-    "stoch_k": 47.83465479668011,
-    "stoch_d": 61.312628465800266,
-    "williams_r": -52.16534520331989,
-    "cci": 28.184501421990866,
-    "mfi": 58.05848891614131,
+    "stoch_k": 50.68692910465062,
+    "stoch_d": 62.2633865684571,
+    "williams_r": -49.31307089534938,
+    "cci": 30.347237220590806,
+    "mfi": 57.97998300533683,
     "adx": null,
     "plus_di": 24.394031719109062,
     "minus_di": 15.932505170897288,
@@ -42,7 +42,7 @@
     "atr": 261.23032924107144,
     "volatility_high": 0,
     "volatility_std": 0,
-    "daily_range_pct": 1.6210253383984876,
+    "daily_range_pct": 1.6192242007602473,
     "gaps_detected": 1,
     "gap_info": {
       "type": "up",
@@ -50,29 +50,29 @@
       "percentage": 0.5286012358638084,
       "support_resistance_level": 21777.0947265625
     },
-    "rvol": 0.12407365678358355,
+    "rvol": 0.14275500338339628,
     "volume_above_average": 0,
     "volume_spike": 0,
     "big_print_detected": 0,
-    "average_volume": 8848751850.0,
-    "volume_std_dev": 2683007917.9262156,
-    "volume_percentile_95": 1097897000.0,
-    "obv": 50022263000.0,
+    "average_volume": 8857076600.0,
+    "volume_std_dev": 2657833265.3806243,
+    "volume_percentile_95": 1264392000.0,
+    "obv": 41566058000.0,
     "obv_trend": "bullish",
-    "last_close": 21602.357421875,
+    "last_close": 21626.38671875,
     "last_high": 21902.984375,
     "last_low": 21552.8046875,
-    "last_volume": 1097897000,
+    "last_volume": 1264392000,
     "daily_range": 350.1796875,
-    "daily_change": -117.33203125,
-    "daily_change_pct": -0.5402104459330491
+    "daily_change": -93.302734375,
+    "daily_change_pct": -0.4295767422290457
   },
   "trend_analysis": {
     "trend": "bearish",
     "confidence": 75.0,
     "strength": "moderate",
     "signals": [
-      "RSI (56.5) - zona de distribución",
+      "RSI (57.2) - zona de distribución",
       "MACD bajista con momentum creciente",
       "Precio por encima de SMA20 - alcista",
       "OBV en tendencia alcista - flujo de dinero positivo",
@@ -86,36 +86,36 @@
     "bearish_weight": 3
   },
   "daily_levels": {
-    "resistance_1": 21603.10504967201,
-    "resistance_2": 21654.853310567578,
-    "resistance_3": 21709.99676646461,
-    "support_1": 21588.76728515625,
-    "support_2": 21552.8046875,
+    "resistance_1": 21668.743494281316,
+    "resistance_2": 21717.38405228188,
+    "resistance_3": 21790.946484375,
+    "support_1": 21603.24018008271,
+    "support_2": 21589.96875,
     "support_3": 21552.8046875,
     "fibonacci_23_6": 21879.005828125,
     "fibonacci_38_2": 21816.6689609375,
     "fibonacci_50_0": 21766.287109375,
     "fibonacci_61_8": 21715.9052578125,
     "fibonacci_78_6": 21644.1751640625,
-    "pivot_point": 21686.048828125,
-    "pivot_r1": 21819.29296875,
-    "pivot_r2": 22036.228515625,
-    "pivot_r3": 22169.47265625,
-    "pivot_s1": 21469.11328125,
-    "pivot_s2": 21335.869140625,
-    "pivot_s3": 21118.93359375,
-    "atr_resistance": 21863.587751116072,
-    "atr_support": 21341.127092633928,
-    "bb_upper": 22144.135300210022,
-    "bb_middle": 21588.76728515625,
-    "bb_lower": 21033.399270102476,
-    "vwap": 21603.10504967201,
+    "pivot_point": 21694.05859375,
+    "pivot_r1": 21835.3125,
+    "pivot_r2": 22044.23828125,
+    "pivot_r3": 22185.4921875,
+    "pivot_s1": 21485.1328125,
+    "pivot_s2": 21343.87890625,
+    "pivot_s3": 21134.953125,
+    "atr_resistance": 21887.617047991072,
+    "atr_support": 21365.156389508928,
+    "bb_upper": 22145.564478129556,
+    "bb_middle": 21589.96875,
+    "bb_lower": 21034.373021870444,
+    "vwap": 21603.24018008271,
     "vwap_data": {
-      "vwap_20": 21603.10504967201,
-      "vwap_10": 21823.09364307761,
-      "vwap_5": 21775.45302274543,
-      "vwap_deviation_pct": -0.0,
-      "above_vwap": 0
+      "vwap_20": 21603.24018008271,
+      "vwap_10": 21822.95388589775,
+      "vwap_5": 21775.32167734676,
+      "vwap_deviation_pct": 0.11,
+      "above_vwap": 1
     },
     "psychological_levels": [
       21400.0,
@@ -126,7 +126,7 @@
       21700.0,
       21800.0
     ],
-    "current_price": 21602.357421875,
+    "current_price": 21626.38671875,
     "daily_range": 350.1796875,
     "atr_value": 261.23032924107144,
     "volatility_adjusted_range": 522.4606584821429
@@ -135,7 +135,7 @@
     "trend_prediction": "neutral",
     "bullish_probability": 50,
     "bearish_probability": 50,
-    "prediction_confidence": 11.3,
+    "prediction_confidence": 8.7,
     "features_used": [
       "rsi",
       "macd",
@@ -144,27 +144,27 @@
       "volume_ratio",
       "volatility_std"
     ],
-    "model_score": 0.679
+    "model_score": 0.658
   },
   "vix_detailed_analysis": {
-    "vix_value": 20.850000381469727,
-    "vix_change_1d": 0.7100009918212891,
-    "vix_change_1d_pct": 3.525327772284917,
-    "vix_30d_percentile": 80.0,
+    "vix_value": 20.8799991607666,
+    "vix_change_1d": 0.7399997711181641,
+    "vix_change_1d_pct": 3.6742790146185875,
+    "vix_30d_percentile": 83.33333333333334,
     "sentiment": "Neutral",
     "sentiment_score": 0,
-    "spx_vix_ratio": 285.8767230744813,
+    "spx_vix_ratio": 285.815628256275,
     "vix_extreme_high": 0,
     "vix_extreme_low": 0,
     "market_fear_level": "moderate"
   },
   "tick_index_analysis": {
     "tick_approximation": -2,
-    "advancing_stocks": 3,
-    "declining_stocks": 5,
+    "advancing_stocks": 4,
+    "declining_stocks": 6,
     "unchanged_stocks": 0,
-    "total_stocks_sampled": 8,
-    "advance_decline_ratio": 0.375,
+    "total_stocks_sampled": 10,
+    "advance_decline_ratio": 0.4,
     "tick_sentiment": "neutral",
     "market_breadth": "moderate"
   },
@@ -11495,24 +11495,24 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-06-20T19:31:06.335140",
+      "timestamp": "2025-06-20T20:01:07.183880",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
     {
-      "title": "Índice de Volatilidad VIX: 20.85 (+0.71)",
+      "title": "Índice de Volatilidad VIX: 20.88 (+0.74)",
       "summary": "El VIX indica un sentimiento de mercado neutral. Niveles actuales suggen volatilidad moderada.",
       "source": "Análisis VIX",
-      "timestamp": "2025-06-20T19:31:06.687730",
+      "timestamp": "2025-06-20T20:01:07.477631",
       "relevance": "high",
       "sentiment": "neutral"
     },
     {
-      "title": "Decisión de Tipos de Interés de la Fed",
-      "summary": "Las decisiones de política monetaria impactan directamente en las valoraciones tecnológicas.",
+      "title": "Resultados Trimestrales de Empresas Tecnológicas",
+      "summary": "Los resultados de las principales empresas del NASDAQ 100 influyen en la dirección del índice.",
       "source": "Calendario Económico",
-      "relevance": "high",
-      "timestamp": "2025-06-20T19:31:06.687748"
+      "relevance": "medium",
+      "timestamp": "2025-06-20T20:01:07.477649"
     }
   ],
   "summary": {
@@ -11522,12 +11522,12 @@
       "emoji": "🔴"
     },
     "key_levels": {
-      "resistance": 21603.10504967201,
-      "support": 21588.76728515625
+      "resistance": 21668.743494281316,
+      "support": 21603.24018008271
     },
     "technical_indicators": {
       "rsi": {
-        "value": 56.50557801540493,
+        "value": 57.18968430396015,
         "status": "NEUTRAL",
         "emoji": "🟡"
       },
@@ -11543,15 +11543,15 @@
       }
     },
     "volume_analysis": {
-      "rvol": 0.12407365678358355,
+      "rvol": 0.14275500338339628,
       "status": "BAJO",
       "big_prints_detected": 0,
       "emoji": "🔴"
     },
     "market_sentiment": {
       "vix": {
-        "value": 20.850000381469727,
-        "change": 0.7100009918212891,
+        "value": 20.8799991607666,
+        "change": 0.7399997711181641,
         "sentiment": "NEUTRAL",
         "emoji": "😐"
       },
@@ -11584,7 +11584,7 @@
       "prediction": "NEUTRAL",
       "bullish_probability": 50,
       "bearish_probability": 50,
-      "confidence": 11.3,
+      "confidence": 8.7,
       "emoji": "🟡"
     },
     "executive_summary": {
