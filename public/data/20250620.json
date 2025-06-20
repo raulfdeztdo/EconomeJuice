@@ -1,12 +1,12 @@
 {
   "date": "2025-06-20",
-  "timestamp": "2025-06-20T20:01:07.478026",
+  "timestamp": "2025-06-20T20:34:38.248500",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 21902.984375,
     "low": 21552.8046875,
     "close": 21626.38671875,
-    "volume": 1264392000
+    "volume": 1953611000
   },
   "technical_indicators": {
     "rsi": 57.18968430396015,
@@ -33,7 +33,7 @@
     "stoch_d": 62.2633865684571,
     "williams_r": -49.31307089534938,
     "cci": 30.347237220590806,
-    "mfi": 57.97998300533683,
+    "mfi": 57.65802711517933,
     "adx": null,
     "plus_di": 24.394031719109062,
     "minus_di": 15.932505170897288,
@@ -50,19 +50,19 @@
       "percentage": 0.5286012358638084,
       "support_resistance_level": 21777.0947265625
     },
-    "rvol": 0.14275500338339628,
+    "rvol": 0.2197157678314028,
     "volume_above_average": 0,
     "volume_spike": 0,
     "big_print_detected": 0,
-    "average_volume": 8857076600.0,
-    "volume_std_dev": 2657833265.3806243,
-    "volume_percentile_95": 1264392000.0,
-    "obv": 41566058000.0,
+    "average_volume": 8891537550.0,
+    "volume_std_dev": 2556752693.49846,
+    "volume_percentile_95": 1953611000.0,
+    "obv": 40876839000.0,
     "obv_trend": "bullish",
     "last_close": 21626.38671875,
     "last_high": 21902.984375,
     "last_low": 21552.8046875,
-    "last_volume": 1264392000,
+    "last_volume": 1953611000,
     "daily_range": 350.1796875,
     "daily_change": -93.302734375,
     "daily_change_pct": -0.4295767422290457
@@ -89,7 +89,7 @@
     "resistance_1": 21668.743494281316,
     "resistance_2": 21717.38405228188,
     "resistance_3": 21790.946484375,
-    "support_1": 21603.24018008271,
+    "support_1": 21603.59216519157,
     "support_2": 21589.96875,
     "support_3": 21552.8046875,
     "fibonacci_23_6": 21879.005828125,
@@ -109,11 +109,11 @@
     "bb_upper": 22145.564478129556,
     "bb_middle": 21589.96875,
     "bb_lower": 21034.373021870444,
-    "vwap": 21603.24018008271,
+    "vwap": 21603.59216519157,
     "vwap_data": {
-      "vwap_20": 21603.24018008271,
-      "vwap_10": 21822.95388589775,
-      "vwap_5": 21775.32167734676,
+      "vwap_20": 21603.59216519157,
+      "vwap_10": 21821.982862313173,
+      "vwap_5": 21773.804391042817,
       "vwap_deviation_pct": 0.11,
       "above_vwap": 1
     },
@@ -147,13 +147,13 @@
     "model_score": 0.658
   },
   "vix_detailed_analysis": {
-    "vix_value": 20.8799991607666,
-    "vix_change_1d": 0.7399997711181641,
-    "vix_change_1d_pct": 3.6742790146185875,
-    "vix_30d_percentile": 83.33333333333334,
+    "vix_value": 20.6200008392334,
+    "vix_change_1d": 0.48000144958496094,
+    "vix_change_1d_pct": 2.3833240522920383,
+    "vix_30d_percentile": 76.66666666666667,
     "sentiment": "Neutral",
     "sentiment_score": 0,
-    "spx_vix_ratio": 285.815628256275,
+    "spx_vix_ratio": 289.41996124437935,
     "vix_extreme_high": 0,
     "vix_extreme_low": 0,
     "market_fear_level": "moderate"
@@ -11495,24 +11495,24 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-06-20T20:01:07.183880",
+      "timestamp": "2025-06-20T20:34:37.863875",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
     {
-      "title": "Índice de Volatilidad VIX: 20.88 (+0.74)",
+      "title": "Índice de Volatilidad VIX: 20.62 (+0.48)",
       "summary": "El VIX indica un sentimiento de mercado neutral. Niveles actuales suggen volatilidad moderada.",
       "source": "Análisis VIX",
-      "timestamp": "2025-06-20T20:01:07.477631",
+      "timestamp": "2025-06-20T20:34:38.248004",
       "relevance": "high",
       "sentiment": "neutral"
     },
     {
-      "title": "Resultados Trimestrales de Empresas Tecnológicas",
-      "summary": "Los resultados de las principales empresas del NASDAQ 100 influyen en la dirección del índice.",
+      "title": "Datos de Empleo No Agrícola (NFP) - Próxima publicación",
+      "summary": "Los datos de empleo estadounidense son clave para el sentimiento del mercado tecnológico.",
       "source": "Calendario Económico",
-      "relevance": "medium",
-      "timestamp": "2025-06-20T20:01:07.477649"
+      "relevance": "high",
+      "timestamp": "2025-06-20T20:34:38.248023"
     }
   ],
   "summary": {
@@ -11523,7 +11523,7 @@
     },
     "key_levels": {
       "resistance": 21668.743494281316,
-      "support": 21603.24018008271
+      "support": 21603.59216519157
     },
     "technical_indicators": {
       "rsi": {
@@ -11543,15 +11543,15 @@
       }
     },
     "volume_analysis": {
-      "rvol": 0.14275500338339628,
+      "rvol": 0.2197157678314028,
       "status": "BAJO",
       "big_prints_detected": 0,
       "emoji": "🔴"
     },
     "market_sentiment": {
       "vix": {
-        "value": 20.8799991607666,
-        "change": 0.7399997711181641,
+        "value": 20.6200008392334,
+        "change": 0.48000144958496094,
         "sentiment": "NEUTRAL",
         "emoji": "😐"
       },
