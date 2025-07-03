@@ -1,12 +1,12 @@
 {
   "date": "2025-07-03",
-  "timestamp": "2025-07-03T18:39:41.795501",
+  "timestamp": "2025-07-03T19:01:15.331623",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 22896.009765625,
     "low": 22736.078125,
     "close": 22866.970703125,
-    "volume": 764560523
+    "volume": 765325555
   },
   "technical_indicators": {
     "rsi": 68.74645338198583,
@@ -33,7 +33,7 @@
     "stoch_d": 90.23692588347599,
     "williams_r": -2.129448345695916,
     "cci": 152.9321102934879,
-    "mfi": 62.52404248558066,
+    "mfi": 62.52429772126676,
     "adx": null,
     "plus_di": 34.8516298571698,
     "minus_di": 17.313781456713574,
@@ -45,19 +45,19 @@
     "daily_range_pct": 0.699400207842763,
     "gaps_detected": 0,
     "gap_info": null,
-    "rvol": 0.08528754780113931,
+    "rvol": 0.08537252365754362,
     "volume_above_average": 0,
     "volume_spike": 0,
     "big_print_detected": 0,
-    "average_volume": 8964503526.15,
-    "volume_std_dev": 2715985860.1611853,
-    "volume_percentile_95": 764560523.0,
-    "obv": 76747370523.0,
+    "average_volume": 8964541777.75,
+    "volume_std_dev": 2715864297.611095,
+    "volume_percentile_95": 765325555.0,
+    "obv": 76748135555.0,
     "obv_trend": "bullish",
     "last_close": 22866.970703125,
     "last_high": 22896.009765625,
     "last_low": 22736.078125,
-    "last_volume": 764560523,
+    "last_volume": 765325555,
     "daily_range": 159.931640625,
     "daily_change": 225.080078125,
     "daily_change_pct": 0.9940869419997916
@@ -106,11 +106,11 @@
     "bb_upper": 22880.626818633966,
     "bb_middle": 22069.44892578125,
     "bb_lower": 21258.271032928533,
-    "vwap": 22017.51833071654,
+    "vwap": 22017.521810451086,
     "vwap_data": {
-      "vwap_20": 22017.51833071654,
-      "vwap_10": 22271.872838930263,
-      "vwap_5": 22560.964950835576,
+      "vwap_20": 22017.521810451086,
+      "vwap_10": 22271.87814057211,
+      "vwap_5": 22560.970584010323,
       "vwap_deviation_pct": 3.86,
       "above_vwap": 1
     },
@@ -9355,7 +9355,7 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-07-03T18:39:41.161871",
+      "timestamp": "2025-07-03T19:01:14.668844",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
@@ -9363,7 +9363,7 @@
       "title": "Índice de Volatilidad VIX: 16.38 (-0.26)",
       "summary": "El VIX indica un sentimiento de mercado neutral. Niveles actuales suggen volatilidad moderada.",
       "source": "Análisis VIX",
-      "timestamp": "2025-07-03T18:39:41.795042",
+      "timestamp": "2025-07-03T19:01:15.331109",
       "relevance": "high",
       "sentiment": "neutral"
     },
@@ -9372,7 +9372,7 @@
       "summary": "Los resultados de las principales empresas del NASDAQ 100 influyen en la dirección del índice.",
       "source": "Calendario Económico",
       "relevance": "medium",
-      "timestamp": "2025-07-03T18:39:41.795060"
+      "timestamp": "2025-07-03T19:01:15.331126"
     }
   ],
   "summary": {
@@ -9403,7 +9403,7 @@
       }
     },
     "volume_analysis": {
-      "rvol": 0.08528754780113931,
+      "rvol": 0.08537252365754362,
       "status": "BAJO",
       "big_prints_detected": 0,
       "emoji": "🔴"
