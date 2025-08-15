@@ -1,39 +1,39 @@
 {
   "date": "2025-08-15",
-  "timestamp": "2025-08-15T16:01:38.834960",
+  "timestamp": "2025-08-15T16:38:25.216845",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 23813.986328125,
     "low": 23651.20703125,
-    "close": 23699.39453125,
-    "volume": 649494041
+    "close": 23687.87890625,
+    "volume": 725436425
   },
   "technical_indicators": {
-    "rsi": 57.113092008622516,
+    "rsi": 56.84170399467441,
     "rsi_oversold": 0,
     "rsi_overbought": 0,
-    "sma_10": 23526.97109375,
-    "sma_20": 23357.96455078125,
+    "sma_10": 23525.81953125,
+    "sma_20": 23357.38876953125,
     "sma_50": null,
     "sma_200": null,
-    "ema_12": 23551.67666939429,
-    "ema_26": 23430.4659199547,
+    "ema_12": 23549.866208679596,
+    "ema_26": 23429.437807416154,
     "ema_50": null,
     "ema_100": null,
-    "macd": 121.21074943958956,
-    "macd_signal": 75.00873506516271,
-    "macd_histogram": 46.20201437442685,
+    "macd": 120.42840126344163,
+    "macd_signal": 74.8513363116858,
+    "macd_histogram": 45.57706495175583,
     "macd_bullish": 1,
-    "bb_upper": 23940.614895742863,
-    "bb_middle": 23357.96455078125,
-    "bb_lower": 22775.314205819635,
-    "bb_width": 4.988879435062985,
+    "bb_upper": 23938.639541790883,
+    "bb_middle": 23357.38876953125,
+    "bb_lower": 22776.13799727162,
+    "bb_width": 4.977018432966691,
     "bb_squeeze": 1,
-    "stoch_k": 79.16588766728384,
-    "stoch_d": 86.44008338811459,
-    "williams_r": -20.834112332716163,
-    "cci": 111.18900624717838,
-    "mfi": 60.172185185774616,
+    "stoch_k": 78.2769237264114,
+    "stoch_d": 86.14376207449044,
+    "williams_r": -21.723076273588603,
+    "cci": 110.19038667477052,
+    "mfi": 60.132522173636005,
     "adx": null,
     "plus_di": 31.211625021535593,
     "minus_di": 18.873479780189765,
@@ -41,33 +41,33 @@
     "trend_is_strong": 0,
     "atr": 289.0835658482143,
     "volatility_high": 0,
-    "volatility_std": 0.8473161318861135,
-    "daily_range_pct": 0.6868500233639276,
+    "volatility_std": 0.8494751738461273,
+    "daily_range_pct": 0.6871839286211946,
     "gaps_detected": 0,
     "gap_info": null,
-    "rvol": 0.07040748604579276,
+    "rvol": 0.07860755659276664,
     "volume_above_average": 0,
     "volume_spike": 0,
     "big_print_detected": 0,
-    "average_volume": 9224786702.05,
-    "volume_std_dev": 2428601444.4133353,
-    "volume_percentile_95": 649494041.0,
-    "obv": 51031735959.0,
+    "average_volume": 9228583821.25,
+    "volume_std_dev": 2414506782.8851743,
+    "volume_percentile_95": 725436425.0,
+    "obv": 50955793575.0,
     "obv_trend": "bullish",
-    "last_close": 23699.39453125,
+    "last_close": 23687.87890625,
     "last_high": 23813.986328125,
     "last_low": 23651.20703125,
-    "last_volume": 649494041,
+    "last_volume": 725436425,
     "daily_range": 162.779296875,
-    "daily_change": -133.044921875,
-    "daily_change_pct": -0.558251378910163
+    "daily_change": -144.560546875,
+    "daily_change_pct": -0.6065704988334489
   },
   "trend_analysis": {
     "trend": "bullish",
     "confidence": 81.8,
     "strength": "strong",
     "signals": [
-      "RSI (57.1) - zona de distribución",
+      "RSI (56.8) - zona de distribución",
       "MACD alcista con momentum creciente",
       "Precio por encima de SMA20 - alcista",
       "OBV en tendencia alcista - flujo de dinero positivo",
@@ -82,34 +82,34 @@
   },
   "daily_levels": {
     "resistance_1": 23783.99810546875,
-    "resistance_2": 23791.8515625,
+    "resistance_2": 23784.174479166664,
     "resistance_3": 23854.8123828125,
     "support_1": 23669.53119140625,
-    "support_2": 23629.072265625,
+    "support_2": 23621.395182291664,
     "support_3": 23588.04626953125,
     "fibonacci_23_6": 23854.8123828125,
     "fibonacci_38_2": 23783.99810546875,
     "fibonacci_50_0": 23726.7646484375,
     "fibonacci_61_8": 23669.53119140625,
     "fibonacci_78_6": 23588.04626953125,
-    "pivot_point": 23721.529296875,
-    "pivot_r1": 23791.8515625,
-    "pivot_r2": 23884.30859375,
-    "pivot_r3": 23954.630859375,
-    "pivot_s1": 23629.072265625,
-    "pivot_s2": 23558.75,
-    "pivot_s3": 23466.29296875,
-    "atr_resistance": 23988.478097098214,
-    "atr_support": 23410.310965401786,
-    "bb_upper": 23940.614895742863,
-    "bb_middle": 23357.96455078125,
-    "bb_lower": 22775.314205819635,
-    "vwap": 23329.260654720187,
+    "pivot_point": 23717.690755208332,
+    "pivot_r1": 23784.174479166664,
+    "pivot_r2": 23880.470052083332,
+    "pivot_r3": 23946.953776041664,
+    "pivot_s1": 23621.395182291664,
+    "pivot_s2": 23554.911458333332,
+    "pivot_s3": 23458.615885416664,
+    "atr_resistance": 23976.962472098214,
+    "atr_support": 23398.795340401786,
+    "bb_upper": 23938.639541790883,
+    "bb_middle": 23357.38876953125,
+    "bb_lower": 22776.13799727162,
+    "vwap": 23329.406967515482,
     "vwap_data": {
-      "vwap_20": 23329.260654720187,
-      "vwap_10": 23502.99369602178,
-      "vwap_5": 23750.24148126684,
-      "vwap_deviation_pct": 1.59,
+      "vwap_20": 23329.406967515482,
+      "vwap_10": 23503.171566345183,
+      "vwap_5": 23750.103875263823,
+      "vwap_deviation_pct": 1.54,
       "above_vwap": 1
     },
     "psychological_levels": [
@@ -120,7 +120,7 @@
       23700.0,
       23800.0
     ],
-    "current_price": 23699.39453125,
+    "current_price": 23687.87890625,
     "daily_range": 162.779296875,
     "atr_value": 289.0835658482143,
     "volatility_adjusted_range": 578.1671316964286
@@ -141,228 +141,228 @@
     "model_score": 0.66
   },
   "vix_detailed_analysis": {
-    "vix_value": 14.989999771118164,
-    "vix_change_1d": 0.15999984741210938,
-    "vix_change_1d_pct": 1.0788931101499628,
+    "vix_value": 14.9399995803833,
+    "vix_change_1d": 0.1099996566772461,
+    "vix_change_1d_pct": 0.7417374055505518,
     "vix_30d_percentile": 13.333333333333334,
     "sentiment": "Greed",
     "sentiment_score": 2,
-    "spx_vix_ratio": 430.3075488381142,
+    "spx_vix_ratio": 431.8313413519004,
     "vix_extreme_high": 0,
     "vix_extreme_low": 0,
     "market_fear_level": "low"
   },
   "tick_index_analysis": {
-    "tick_approximation": 3,
+    "tick_approximation": 2,
     "advancing_stocks": 6,
-    "declining_stocks": 3,
+    "declining_stocks": 4,
     "unchanged_stocks": 0,
-    "total_stocks_sampled": 9,
-    "advance_decline_ratio": 0.6666666666666666,
+    "total_stocks_sampled": 10,
+    "advance_decline_ratio": 0.6,
     "tick_sentiment": "neutral",
     "market_breadth": "moderate"
   },
   "tape_trading_metrics": {
-    "buy_pressure": 105832.0,
-    "sell_pressure": 124911.0,
-    "buy_sell_ratio": 0.8472592485849925,
-    "buy_pressure_pct": 45.865746739879434,
-    "sell_pressure_pct": 54.134253260120566,
-    "avg_trade_size": 338.5765895953757,
-    "large_trades_count": 129,
-    "large_trade_ratio": 0.18641618497109827,
-    "bid_ask_imbalance": 0.8,
+    "buy_pressure": 118328.0,
+    "sell_pressure": 142581.0,
+    "buy_sell_ratio": 0.8299001970809575,
+    "buy_pressure_pct": 45.352210924115305,
+    "sell_pressure_pct": 54.6477890758847,
+    "avg_trade_size": 365.94190871369295,
+    "large_trades_count": 134,
+    "large_trade_ratio": 0.18533886583679116,
+    "bid_ask_imbalance": 0.7,
     "order_flow_sentiment": "neutral"
   },
   "vwap_multi_timeframe": {
-    "vwap_1m": 23843.636374015674,
-    "vwap_1m_distance": -0.23543545596446963,
+    "vwap_1m": 23837.216106147196,
+    "vwap_1m_distance": -0.26939431962709737,
     "price_above_vwap_1m": 0,
-    "vwap_5m": 23843.010722466002,
-    "vwap_5m_distance": -0.23281758798060484,
+    "vwap_5m": 23836.588417931143,
+    "vwap_5m_distance": -0.2667681163773788,
     "price_above_vwap_5m": 0,
-    "vwap_15m": 23848.83093864711,
-    "vwap_15m_distance": -0.2571653881269345,
+    "vwap_15m": 23847.757698444064,
+    "vwap_15m_distance": -0.31347894166561996,
     "price_above_vwap_15m": 0,
-    "vwap_4h": 22961.160198811915,
-    "vwap_4h_distance": 3.598859090887067,
+    "vwap_4h": 22987.11886574951,
+    "vwap_4h_distance": 3.4187891872845393,
     "price_above_vwap_4h": 1
   },
   "intraday_analysis": {
     "1m": {
       "timeframe": "1m",
-      "total_bars": 692,
-      "rsi": 48.90656063618291,
+      "total_bars": 723,
+      "rsi": 29.216867469879517,
       "rsi_oversold_scalp": 0,
       "rsi_overbought_scalp": 0,
-      "sma_fast": 23764.222222222223,
-      "sma_slow": 23778.75,
-      "ema_fast": 23773.636097877756,
-      "ema_slow": 23773.597393978413,
-      "ema_bullish_cross": 1,
+      "sma_fast": 23777.833333333332,
+      "sma_slow": 23786.35714285714,
+      "ema_fast": 23778.114931186818,
+      "ema_slow": 23780.331390291878,
+      "ema_bullish_cross": 0,
       "ema_bearish_cross": 0,
-      "macd": -7.687501047272235,
-      "macd_signal": -11.125911068959292,
-      "macd_histogram": 3.438410021687057,
-      "macd_bullish": 1,
-      "bb_upper": 23821.911546411786,
-      "bb_middle": 23777.4125,
-      "bb_lower": 23732.91345358821,
+      "macd": -3.5298144630214665,
+      "macd_signal": -2.2606367684194053,
+      "macd_histogram": -1.2691776946020612,
+      "macd_bullish": 0,
+      "bb_upper": 23808.499542938778,
+      "bb_middle": 23786.225,
+      "bb_lower": 23763.95045706122,
       "bb_squeeze": 1,
       "price_near_upper_bb": 1,
       "price_near_lower_bb": 1,
-      "atr": 14.357142857142858,
-      "atr_stop_long": 23765.964285714286,
-      "atr_stop_short": 23809.035714285714,
-      "stoch_k": 81.22605363984674,
-      "stoch_d": 73.5895980182267,
-      "stoch_oversold": 0,
-      "stoch_overbought": 1,
-      "momentum_5": 0.13786716340942196,
-      "momentum_10": 0.06520275954904342,
-      "resistance_level": 23819.25,
-      "support_level": 23734.5,
+      "atr": 9.75,
+      "atr_stop_long": 23758.375,
+      "atr_stop_short": 23787.625,
+      "stoch_k": 13.77245508982036,
+      "stoch_d": 17.472538793380945,
+      "stoch_oversold": 1,
+      "stoch_overbought": 0,
+      "momentum_5": -0.006309280952276897,
+      "momentum_10": -0.025232347869974525,
+      "resistance_level": 23809.75,
+      "support_level": 23767.25,
       "volume_ratio": 0.0,
       "volume_spike": 0,
-      "current_price": 23787.5,
-      "current_high": 23799.75,
-      "current_low": 23783.5,
+      "current_price": 23773.0,
+      "current_high": 23776.25,
+      "current_low": 23767.25,
       "current_volume": 0,
-      "trend_short": "bullish",
-      "price_above_vwap": 1,
+      "trend_short": "bearish",
+      "price_above_vwap": 0,
       "scalp_buy_signal": 1,
-      "scalp_sell_signal": 0,
+      "scalp_sell_signal": 1,
       "range_trading": 1
     },
     "5m": {
       "timeframe": "5m",
-      "total_bars": 141,
-      "rsi": 39.07203907203907,
+      "total_bars": 148,
+      "rsi": 40.44943820224719,
       "rsi_oversold_scalp": 0,
       "rsi_overbought_scalp": 0,
-      "sma_fast": 23812.9125,
-      "sma_slow": 23856.765,
-      "ema_fast": 23794.868260479812,
-      "ema_slow": 23817.20353807292,
+      "sma_fast": 23793.4375,
+      "sma_slow": 23839.17,
+      "ema_fast": 23788.22909264604,
+      "ema_slow": 23804.66392602962,
       "ema_bullish_cross": 0,
       "ema_bearish_cross": 0,
-      "macd": -22.335277593108913,
-      "macd_signal": -20.62684775424843,
-      "macd_histogram": -1.7084298388604822,
-      "macd_bullish": 0,
-      "bb_upper": 23873.844359050578,
-      "bb_middle": 23812.9125,
-      "bb_lower": 23751.98064094942,
+      "macd": -16.434833383580553,
+      "macd_signal": -17.67988876810297,
+      "macd_histogram": 1.2450553845224164,
+      "macd_bullish": 1,
+      "bb_upper": 23831.908225370382,
+      "bb_middle": 23793.4375,
+      "bb_lower": 23754.966774629618,
       "bb_squeeze": 1,
       "price_near_upper_bb": 1,
       "price_near_lower_bb": 1,
-      "atr": 28.160714285714285,
-      "atr_stop_long": 23745.258928571428,
-      "atr_stop_short": 23829.741071428572,
-      "stoch_k": 52.08845208845209,
-      "stoch_d": 31.619015709924792,
+      "atr": 27.875,
+      "atr_stop_long": 23731.1875,
+      "atr_stop_short": 23814.8125,
+      "stoch_k": 45.42772861356932,
+      "stoch_d": 44.70850577045266,
       "stoch_oversold": 0,
       "stoch_overbought": 0,
-      "momentum_5": -0.06301859048418734,
-      "momentum_10": -0.05881982228010951,
-      "resistance_level": 23881.0,
+      "momentum_5": -0.015771709758483077,
+      "momentum_10": -0.00736075037592876,
+      "resistance_level": 23836.25,
       "support_level": 23734.5,
-      "volume_ratio": 1.066045630059785,
+      "volume_ratio": 0.549710354409672,
       "volume_spike": 0,
-      "current_price": 23787.5,
-      "current_high": 23817.0,
-      "current_low": 23775.0,
-      "current_volume": 5287,
+      "current_price": 23773.0,
+      "current_high": 23789.0,
+      "current_low": 23763.75,
+      "current_volume": 2453,
       "trend_short": "bearish",
       "price_above_vwap": 0,
-      "scalp_buy_signal": 0,
-      "scalp_sell_signal": 1,
+      "scalp_buy_signal": 1,
+      "scalp_sell_signal": 0,
       "range_trading": 1
     },
     "15m": {
       "timeframe": "15m",
-      "total_bars": 416,
-      "rsi": 35.27902501603593,
+      "total_bars": 418,
+      "rsi": 34.64886825304701,
       "rsi_oversold_scalp": 0,
       "rsi_overbought_scalp": 0,
-      "sma_fast": 23862.875,
-      "sma_slow": 23899.41,
-      "ema_fast": 23822.628678583384,
-      "ema_slow": 23856.56640277811,
+      "sma_fast": 23850.4,
+      "sma_slow": 23894.255,
+      "ema_fast": 23812.730707299816,
+      "ema_slow": 23846.961528080094,
       "ema_bullish_cross": 0,
       "ema_bearish_cross": 0,
-      "macd": -33.93772419472589,
-      "macd_signal": -23.623471220460853,
-      "macd_histogram": -10.314252974265035,
+      "macd": -34.23082078027801,
+      "macd_signal": -27.18827765696436,
+      "macd_histogram": -7.042543123313649,
       "macd_bullish": 0,
-      "bb_upper": 23972.824569779626,
-      "bb_middle": 23862.875,
-      "bb_lower": 23752.925430220374,
+      "bb_upper": 23962.822768811995,
+      "bb_middle": 23850.4,
+      "bb_lower": 23737.977231188008,
       "bb_squeeze": 1,
       "price_near_upper_bb": 1,
       "price_near_lower_bb": 1,
-      "atr": 49.357142857142854,
-      "atr_stop_long": 23713.464285714286,
-      "atr_stop_short": 23861.535714285714,
-      "stoch_k": 27.931488801054016,
-      "stoch_d": 17.520703933747413,
+      "atr": 53.517857142857146,
+      "atr_stop_long": 23692.723214285714,
+      "atr_stop_short": 23853.276785714286,
+      "stoch_k": 20.28985507246377,
+      "stoch_d": 28.326745718050066,
       "stoch_oversold": 0,
       "stoch_overbought": 0,
-      "momentum_5": -0.18777077279736876,
-      "momentum_10": -0.5081768371742901,
+      "momentum_5": -0.1585418350954937,
+      "momentum_10": -0.14281513840467275,
       "resistance_level": 23927.25,
       "support_level": 23734.5,
-      "volume_ratio": 0.5920342908102354,
+      "volume_ratio": 0.7452499071917924,
       "volume_spike": 0,
-      "current_price": 23787.5,
-      "current_high": 23799.75,
-      "current_low": 23741.5,
-      "current_volume": 6174,
+      "current_price": 23773.0,
+      "current_high": 23793.25,
+      "current_low": 23767.25,
+      "current_volume": 8833,
       "trend_short": "bearish",
       "price_above_vwap": 0,
-      "scalp_buy_signal": 0,
+      "scalp_buy_signal": 1,
       "scalp_sell_signal": 1,
       "range_trading": 1
     },
     "4h": {
       "timeframe": "4h",
       "total_bars": 298,
-      "rsi": 25.866188769414578,
-      "rsi_oversold_scalp": 0,
+      "rsi": 24.256559766763857,
+      "rsi_oversold_scalp": 1,
       "rsi_overbought_scalp": 0,
-      "sma_fast": 23914.0375,
-      "sma_slow": 23671.65,
-      "ema_fast": 23896.61197508304,
-      "ema_slow": 23841.281115259644,
+      "sma_fast": 23920.675,
+      "sma_slow": 23683.99,
+      "ema_fast": 23877.62737207954,
+      "ema_slow": 23836.25008600042,
       "ema_bullish_cross": 0,
       "ema_bearish_cross": 0,
-      "macd": 55.33085982339617,
-      "macd_signal": 82.04046187030828,
-      "macd_histogram": -26.70960204691211,
+      "macd": 41.377286079121404,
+      "macd_signal": 73.89898114486819,
+      "macd_histogram": -32.52169506574678,
       "macd_bullish": 0,
-      "bb_upper": 24069.496859640374,
-      "bb_middle": 23914.0375,
-      "bb_lower": 23758.578140359623,
+      "bb_upper": 24032.04979399346,
+      "bb_middle": 23920.675,
+      "bb_lower": 23809.300206006537,
       "bb_squeeze": 1,
       "price_near_upper_bb": 1,
       "price_near_lower_bb": 1,
-      "atr": 86.42857142857143,
-      "atr_stop_long": 23657.85714285714,
-      "atr_stop_short": 23917.14285714286,
-      "stoch_k": 15.868263473053892,
-      "stoch_d": 38.471376955444256,
+      "atr": 86.66071428571429,
+      "atr_stop_long": 23643.008928571428,
+      "atr_stop_short": 23902.991071428572,
+      "stoch_k": 11.526946107784433,
+      "stoch_d": 24.536644241036544,
       "stoch_oversold": 1,
       "stoch_overbought": 0,
-      "momentum_5": -0.562243959535158,
-      "momentum_10": -0.6753864943578658,
+      "momentum_5": -0.48349624296208926,
+      "momentum_10": -0.6467386193854452,
       "resistance_level": 24068.5,
-      "support_level": 23608.5,
-      "volume_ratio": 2.522311993192419,
-      "volume_spike": 1,
-      "current_price": 23787.5,
-      "current_high": 23924.25,
-      "current_low": 23734.5,
-      "current_volume": 204969,
+      "support_level": 23622.0,
+      "volume_ratio": 0.23485984514507824,
+      "volume_spike": 0,
+      "current_price": 23773.0,
+      "current_high": 23809.75,
+      "current_low": 23767.25,
+      "current_volume": 19272,
       "trend_short": "bullish",
       "price_above_vwap": 0,
       "scalp_buy_signal": 1,
@@ -372,42 +372,42 @@
     "1d": {
       "timeframe": "1d",
       "total_bars": 253,
-      "rsi": 56.25593918276845,
+      "rsi": 55.9135271277154,
       "rsi_oversold_scalp": 0,
       "rsi_overbought_scalp": 0,
-      "sma_fast": 23482.575,
-      "sma_slow": 22903.7628125,
-      "ema_fast": 23642.277524936184,
-      "ema_slow": 23367.484122299735,
+      "sma_fast": 23481.85,
+      "sma_slow": 22903.4728125,
+      "ema_fast": 23640.046755705414,
+      "ema_slow": 23366.410048221904,
       "ema_bullish_cross": 0,
       "ema_bearish_cross": 0,
-      "macd": 274.7934026364492,
-      "macd_signal": 261.03068374927574,
-      "macd_histogram": 13.762718887173435,
+      "macd": 273.6367074835107,
+      "macd_signal": 260.7993447186881,
+      "macd_histogram": 12.837362764822615,
       "macd_bullish": 1,
-      "bb_upper": 24036.6431389793,
-      "bb_middle": 23482.575,
-      "bb_lower": 22928.5068610207,
+      "bb_upper": 24034.273664648394,
+      "bb_middle": 23481.85,
+      "bb_lower": 22929.426335351603,
       "bb_squeeze": 0,
       "price_near_upper_bb": 1,
       "price_near_lower_bb": 0,
       "atr": 340.85714285714283,
-      "atr_stop_long": 23276.214285714286,
-      "atr_stop_short": 24298.785714285714,
-      "stoch_k": 78.2759953614225,
-      "stoch_d": 86.05849761628656,
+      "atr_stop_long": 23261.714285714286,
+      "atr_stop_short": 24284.285714285714,
+      "stoch_k": 77.15500579822188,
+      "stoch_d": 85.68483442855302,
       "stoch_oversold": 0,
       "stoch_overbought": 0,
-      "momentum_5": 0.3110010015286546,
-      "momentum_10": 3.9493090074834702,
+      "momentum_5": 0.24985504190606633,
+      "momentum_10": 3.8859452668378314,
       "resistance_level": 24068.5,
       "support_level": 22775.0,
-      "volume_ratio": 0.5039487413512258,
+      "volume_ratio": 0.5630362052651501,
       "volume_spike": 0,
-      "current_price": 23787.5,
+      "current_price": 23773.0,
       "current_high": 23963.0,
       "current_low": 23734.5,
-      "current_volume": 251340,
+      "current_volume": 281663,
       "trend_short": "bullish",
       "price_above_vwap": 1,
       "scalp_buy_signal": 1,
@@ -1188,18 +1188,34 @@
       {
         "timestamp": "2025-08-15 01:45:00",
         "open": 23942.0,
-        "high": 23942.75,
+        "high": 23943.5,
         "low": 23941.75,
-        "close": 23942.75,
-        "volume": 42
+        "close": 23943.5,
+        "volume": 48
+      },
+      {
+        "timestamp": "2025-08-15 01:46:00",
+        "open": 23943.0,
+        "high": 23943.0,
+        "low": 23942.25,
+        "close": 23942.25,
+        "volume": 26
+      },
+      {
+        "timestamp": "2025-08-15 01:47:00",
+        "open": 23943.0,
+        "high": 23943.0,
+        "low": 23941.25,
+        "close": 23941.25,
+        "volume": 18
       },
       {
         "timestamp": "2025-08-15 01:48:00",
-        "open": 23941.0,
-        "high": 23941.25,
+        "open": 23942.0,
+        "high": 23942.0,
         "low": 23941.0,
         "close": 23941.0,
-        "volume": 65
+        "volume": 15
       },
       {
         "timestamp": "2025-08-15 01:49:00",
@@ -1828,18 +1844,18 @@
       {
         "timestamp": "2025-08-15 03:07:00",
         "open": 23960.0,
-        "high": 23961.5,
-        "low": 23958.5,
-        "close": 23959.0,
-        "volume": 87
+        "high": 23961.25,
+        "low": 23960.0,
+        "close": 23961.25,
+        "volume": 9
       },
       {
         "timestamp": "2025-08-15 03:08:00",
-        "open": 23959.5,
+        "open": 23961.5,
         "high": 23961.5,
-        "low": 23958.0,
+        "low": 23961.25,
         "close": 23961.25,
-        "volume": 37
+        "volume": 115
       },
       {
         "timestamp": "2025-08-15 03:09:00",
@@ -4538,20 +4554,12 @@
         "volume": 66
       },
       {
-        "timestamp": "2025-08-15 08:55:00",
-        "open": 23907.75,
-        "high": 23909.0,
-        "low": 23904.0,
-        "close": 23907.25,
-        "volume": 121
-      },
-      {
         "timestamp": "2025-08-15 08:56:00",
-        "open": 23907.75,
-        "high": 23911.0,
-        "low": 23907.75,
+        "open": 23909.0,
+        "high": 23910.5,
+        "low": 23908.0,
         "close": 23908.0,
-        "volume": 218
+        "volume": 339
       },
       {
         "timestamp": "2025-08-15 08:57:00",
@@ -4870,24 +4878,16 @@
         "open": 23864.5,
         "high": 23883.25,
         "low": 23863.25,
-        "close": 23877.25,
-        "volume": 1906
-      },
-      {
-        "timestamp": "2025-08-15 09:37:00",
-        "open": 23878.0,
-        "high": 23886.5,
-        "low": 23862.5,
-        "close": 23869.25,
-        "volume": 1780
+        "close": 23880.5,
+        "volume": 1494
       },
       {
         "timestamp": "2025-08-15 09:38:00",
-        "open": 23869.25,
+        "open": 23870.75,
         "high": 23876.5,
-        "low": 23865.0,
+        "low": 23865.25,
         "close": 23865.5,
-        "volume": 912
+        "volume": 3104
       },
       {
         "timestamp": "2025-08-15 09:39:00",
@@ -4930,20 +4930,12 @@
         "volume": 1661
       },
       {
-        "timestamp": "2025-08-15 09:44:00",
-        "open": 23857.25,
-        "high": 23864.0,
-        "low": 23851.25,
-        "close": 23852.5,
-        "volume": 1211
-      },
-      {
         "timestamp": "2025-08-15 09:45:00",
-        "open": 23852.25,
-        "high": 23854.0,
+        "open": 23817.25,
+        "high": 23820.0,
         "low": 23813.0,
         "close": 23814.25,
-        "volume": 3197
+        "volume": 4408
       },
       {
         "timestamp": "2025-08-15 09:46:00",
@@ -5162,20 +5154,12 @@
         "volume": 915
       },
       {
-        "timestamp": "2025-08-15 10:13:00",
-        "open": 23857.5,
-        "high": 23869.0,
-        "low": 23854.5,
-        "close": 23857.75,
-        "volume": 962
-      },
-      {
         "timestamp": "2025-08-15 10:14:00",
-        "open": 23857.75,
-        "high": 23875.0,
-        "low": 23857.75,
+        "open": 23871.25,
+        "high": 23872.25,
+        "low": 23871.0,
         "close": 23871.75,
-        "volume": 1229
+        "volume": 2191
       },
       {
         "timestamp": "2025-08-15 10:15:00",
@@ -5698,28 +5682,12 @@
         "volume": 880
       },
       {
-        "timestamp": "2025-08-15 11:20:00",
-        "open": 23824.25,
-        "high": 23832.75,
-        "low": 23824.0,
-        "close": 23829.5,
-        "volume": 833
-      },
-      {
-        "timestamp": "2025-08-15 11:21:00",
-        "open": 23829.5,
-        "high": 23831.5,
-        "low": 23823.75,
-        "close": 23824.25,
-        "volume": 690
-      },
-      {
         "timestamp": "2025-08-15 11:22:00",
-        "open": 23824.25,
-        "high": 23827.5,
+        "open": 23813.5,
+        "high": 23815.0,
         "low": 23807.75,
         "close": 23808.5,
-        "volume": 1146
+        "volume": 2669
       },
       {
         "timestamp": "2025-08-15 11:23:00",
@@ -5950,7 +5918,287 @@
         "open": 23785.0,
         "high": 23799.75,
         "low": 23783.5,
-        "close": 23787.5,
+        "close": 23798.25,
+        "volume": 1397
+      },
+      {
+        "timestamp": "2025-08-15 11:52:00",
+        "open": 23798.0,
+        "high": 23803.25,
+        "low": 23793.0,
+        "close": 23796.75,
+        "volume": 1139
+      },
+      {
+        "timestamp": "2025-08-15 11:53:00",
+        "open": 23797.0,
+        "high": 23817.0,
+        "low": 23795.75,
+        "close": 23812.5,
+        "volume": 1848
+      },
+      {
+        "timestamp": "2025-08-15 11:54:00",
+        "open": 23811.75,
+        "high": 23816.5,
+        "low": 23810.75,
+        "close": 23812.25,
+        "volume": 1096
+      },
+      {
+        "timestamp": "2025-08-15 11:55:00",
+        "open": 23812.0,
+        "high": 23819.0,
+        "low": 23803.5,
+        "close": 23807.0,
+        "volume": 1360
+      },
+      {
+        "timestamp": "2025-08-15 11:56:00",
+        "open": 23807.25,
+        "high": 23812.5,
+        "low": 23799.0,
+        "close": 23800.75,
+        "volume": 907
+      },
+      {
+        "timestamp": "2025-08-15 11:57:00",
+        "open": 23800.5,
+        "high": 23801.75,
+        "low": 23788.0,
+        "close": 23790.75,
+        "volume": 1360
+      },
+      {
+        "timestamp": "2025-08-15 11:58:00",
+        "open": 23790.75,
+        "high": 23797.25,
+        "low": 23782.75,
+        "close": 23797.25,
+        "volume": 1005
+      },
+      {
+        "timestamp": "2025-08-15 11:59:00",
+        "open": 23796.5,
+        "high": 23798.25,
+        "low": 23785.5,
+        "close": 23787.75,
+        "volume": 897
+      },
+      {
+        "timestamp": "2025-08-15 12:00:00",
+        "open": 23787.75,
+        "high": 23792.75,
+        "low": 23781.5,
+        "close": 23788.25,
+        "volume": 755
+      },
+      {
+        "timestamp": "2025-08-15 12:01:00",
+        "open": 23787.5,
+        "high": 23790.5,
+        "low": 23773.5,
+        "close": 23774.75,
+        "volume": 1306
+      },
+      {
+        "timestamp": "2025-08-15 12:02:00",
+        "open": 23774.5,
+        "high": 23783.75,
+        "low": 23772.75,
+        "close": 23773.0,
+        "volume": 842
+      },
+      {
+        "timestamp": "2025-08-15 12:03:00",
+        "open": 23772.75,
+        "high": 23776.25,
+        "low": 23767.75,
+        "close": 23772.5,
+        "volume": 964
+      },
+      {
+        "timestamp": "2025-08-15 12:04:00",
+        "open": 23772.25,
+        "high": 23779.5,
+        "low": 23770.5,
+        "close": 23776.75,
+        "volume": 591
+      },
+      {
+        "timestamp": "2025-08-15 12:05:00",
+        "open": 23776.75,
+        "high": 23789.0,
+        "low": 23774.0,
+        "close": 23787.25,
+        "volume": 1087
+      },
+      {
+        "timestamp": "2025-08-15 12:06:00",
+        "open": 23786.25,
+        "high": 23794.5,
+        "low": 23784.0,
+        "close": 23789.0,
+        "volume": 758
+      },
+      {
+        "timestamp": "2025-08-15 12:07:00",
+        "open": 23788.75,
+        "high": 23791.25,
+        "low": 23785.0,
+        "close": 23790.0,
+        "volume": 789
+      },
+      {
+        "timestamp": "2025-08-15 12:08:00",
+        "open": 23790.0,
+        "high": 23796.75,
+        "low": 23786.5,
+        "close": 23792.25,
+        "volume": 521
+      },
+      {
+        "timestamp": "2025-08-15 12:09:00",
+        "open": 23792.25,
+        "high": 23797.0,
+        "low": 23788.0,
+        "close": 23795.25,
+        "volume": 536
+      },
+      {
+        "timestamp": "2025-08-15 12:10:00",
+        "open": 23794.75,
+        "high": 23801.5,
+        "low": 23791.75,
+        "close": 23801.25,
+        "volume": 632
+      },
+      {
+        "timestamp": "2025-08-15 12:11:00",
+        "open": 23800.5,
+        "high": 23801.0,
+        "low": 23794.0,
+        "close": 23800.5,
+        "volume": 388
+      },
+      {
+        "timestamp": "2025-08-15 12:12:00",
+        "open": 23800.0,
+        "high": 23809.75,
+        "low": 23797.75,
+        "close": 23807.5,
+        "volume": 764
+      },
+      {
+        "timestamp": "2025-08-15 12:13:00",
+        "open": 23807.0,
+        "high": 23809.0,
+        "low": 23801.75,
+        "close": 23804.0,
+        "volume": 506
+      },
+      {
+        "timestamp": "2025-08-15 12:16:00",
+        "open": 23792.5,
+        "high": 23793.25,
+        "low": 23791.75,
+        "close": 23791.75,
+        "volume": 2195
+      },
+      {
+        "timestamp": "2025-08-15 12:17:00",
+        "open": 23791.5,
+        "high": 23792.5,
+        "low": 23777.75,
+        "close": 23779.5,
+        "volume": 1402
+      },
+      {
+        "timestamp": "2025-08-15 12:18:00",
+        "open": 23779.5,
+        "high": 23788.0,
+        "low": 23779.0,
+        "close": 23779.0,
+        "volume": 794
+      },
+      {
+        "timestamp": "2025-08-15 12:19:00",
+        "open": 23778.25,
+        "high": 23786.25,
+        "low": 23778.0,
+        "close": 23783.0,
+        "volume": 415
+      },
+      {
+        "timestamp": "2025-08-15 12:20:00",
+        "open": 23783.25,
+        "high": 23785.75,
+        "low": 23777.0,
+        "close": 23785.0,
+        "volume": 536
+      },
+      {
+        "timestamp": "2025-08-15 12:21:00",
+        "open": 23784.75,
+        "high": 23784.75,
+        "low": 23773.25,
+        "close": 23773.25,
+        "volume": 585
+      },
+      {
+        "timestamp": "2025-08-15 12:22:00",
+        "open": 23774.0,
+        "high": 23781.5,
+        "low": 23773.75,
+        "close": 23777.75,
+        "volume": 540
+      },
+      {
+        "timestamp": "2025-08-15 12:23:00",
+        "open": 23777.75,
+        "high": 23781.75,
+        "low": 23772.25,
+        "close": 23774.5,
+        "volume": 460
+      },
+      {
+        "timestamp": "2025-08-15 12:24:00",
+        "open": 23774.0,
+        "high": 23778.5,
+        "low": 23772.75,
+        "close": 23776.25,
+        "volume": 270
+      },
+      {
+        "timestamp": "2025-08-15 12:25:00",
+        "open": 23775.75,
+        "high": 23784.25,
+        "low": 23775.0,
+        "close": 23783.0,
+        "volume": 649
+      },
+      {
+        "timestamp": "2025-08-15 12:26:00",
+        "open": 23783.0,
+        "high": 23789.0,
+        "low": 23781.75,
+        "close": 23786.5,
+        "volume": 549
+      },
+      {
+        "timestamp": "2025-08-15 12:27:00",
+        "open": 23786.0,
+        "high": 23786.25,
+        "low": 23771.0,
+        "close": 23771.25,
+        "volume": 438
+      },
+      {
+        "timestamp": "2025-08-15 12:28:00",
+        "open": 23770.25,
+        "high": 23776.25,
+        "low": 23767.25,
+        "close": 23773.0,
         "volume": 0
       }
     ],
@@ -6118,7 +6366,7 @@
       {
         "timestamp": "2025-08-15 01:45:00",
         "open": 23942.0,
-        "high": 23942.75,
+        "high": 23943.5,
         "low": 23940.75,
         "close": 23941.75,
         "volume": 123
@@ -6797,8 +7045,8 @@
       },
       {
         "timestamp": "2025-08-15 08:55:00",
-        "open": 23907.75,
-        "high": 23911.0,
+        "open": 23909.0,
+        "high": 23910.5,
         "low": 23902.0,
         "close": 23905.25,
         "volume": 688
@@ -6862,7 +7110,7 @@
       {
         "timestamp": "2025-08-15 09:35:00",
         "open": 23857.0,
-        "high": 23886.5,
+        "high": 23883.25,
         "low": 23851.25,
         "close": 23853.0,
         "volume": 8068
@@ -6870,18 +7118,18 @@
       {
         "timestamp": "2025-08-15 09:40:00",
         "open": 23852.5,
-        "high": 23864.0,
+        "high": 23863.0,
         "low": 23835.0,
-        "close": 23852.5,
-        "volume": 8229
+        "close": 23858.0,
+        "volume": 7018
       },
       {
         "timestamp": "2025-08-15 09:45:00",
-        "open": 23852.25,
-        "high": 23854.0,
+        "open": 23817.25,
+        "high": 23820.0,
         "low": 23776.75,
         "close": 23783.5,
-        "volume": 13390
+        "volume": 14601
       },
       {
         "timestamp": "2025-08-15 09:50:00",
@@ -6918,7 +7166,7 @@
       {
         "timestamp": "2025-08-15 10:10:00",
         "open": 23866.25,
-        "high": 23875.0,
+        "high": 23872.25,
         "low": 23848.75,
         "close": 23871.75,
         "volume": 5385
@@ -7029,8 +7277,8 @@
       },
       {
         "timestamp": "2025-08-15 11:20:00",
-        "open": 23824.25,
-        "high": 23832.75,
+        "open": 23813.5,
+        "high": 23815.0,
         "low": 23801.75,
         "close": 23804.25,
         "volume": 4606
@@ -7080,8 +7328,64 @@
         "open": 23779.0,
         "high": 23817.0,
         "low": 23775.0,
-        "close": 23787.5,
-        "volume": 5287
+        "close": 23812.25,
+        "volume": 6684
+      },
+      {
+        "timestamp": "2025-08-15 11:55:00",
+        "open": 23812.0,
+        "high": 23819.0,
+        "low": 23782.75,
+        "close": 23787.75,
+        "volume": 5529
+      },
+      {
+        "timestamp": "2025-08-15 12:00:00",
+        "open": 23787.75,
+        "high": 23792.75,
+        "low": 23767.75,
+        "close": 23776.75,
+        "volume": 4458
+      },
+      {
+        "timestamp": "2025-08-15 12:05:00",
+        "open": 23776.75,
+        "high": 23797.0,
+        "low": 23774.0,
+        "close": 23795.25,
+        "volume": 3691
+      },
+      {
+        "timestamp": "2025-08-15 12:10:00",
+        "open": 23794.75,
+        "high": 23809.75,
+        "low": 23791.75,
+        "close": 23804.0,
+        "volume": 2290
+      },
+      {
+        "timestamp": "2025-08-15 12:15:00",
+        "open": 23792.5,
+        "high": 23793.25,
+        "low": 23777.75,
+        "close": 23783.0,
+        "volume": 4806
+      },
+      {
+        "timestamp": "2025-08-15 12:20:00",
+        "open": 23783.25,
+        "high": 23785.75,
+        "low": 23772.25,
+        "close": 23776.25,
+        "volume": 2391
+      },
+      {
+        "timestamp": "2025-08-15 12:25:00",
+        "open": 23775.75,
+        "high": 23789.0,
+        "low": 23763.75,
+        "close": 23773.0,
+        "volume": 2453
       }
     ],
     "15m": [
@@ -7392,23 +7696,23 @@
       {
         "timestamp": "2025-08-11 09:30:00",
         "open": 23715.75,
-        "high": 23738.25,
+        "high": 23730.25,
         "low": 23680.75,
-        "close": 23728.75,
-        "volume": 31487
+        "close": 23727.75,
+        "volume": 28045
       },
       {
         "timestamp": "2025-08-11 09:45:00",
-        "open": 23729.0,
+        "open": 23731.25,
         "high": 23745.25,
         "low": 23707.25,
         "close": 23744.25,
-        "volume": 18322
+        "volume": 21764
       },
       {
         "timestamp": "2025-08-11 10:00:00",
         "open": 23744.75,
-        "high": 23759.25,
+        "high": 23753.5,
         "low": 23722.5,
         "close": 23746.0,
         "volume": 16787
@@ -7433,7 +7737,7 @@
         "timestamp": "2025-08-11 10:45:00",
         "open": 23754.75,
         "high": 23757.75,
-        "low": 23719.25,
+        "low": 23723.0,
         "close": 23727.0,
         "volume": 13477
       },
@@ -8329,7 +8633,7 @@
         "timestamp": "2025-08-12 15:45:00",
         "open": 23920.5,
         "high": 23950.0,
-        "low": 23910.75,
+        "low": 23917.75,
         "close": 23934.5,
         "volume": 26253
       },
@@ -8824,18 +9128,18 @@
       {
         "timestamp": "2025-08-13 08:15:00",
         "open": 23993.0,
-        "high": 24008.5,
+        "high": 24007.25,
         "low": 23993.0,
-        "close": 24005.75,
-        "volume": 1534
+        "close": 24006.0,
+        "volume": 1397
       },
       {
         "timestamp": "2025-08-13 08:30:00",
-        "open": 24005.5,
+        "open": 24005.25,
         "high": 24025.25,
-        "low": 24003.25,
+        "low": 24005.25,
         "close": 24024.0,
-        "volume": 3359
+        "volume": 3496
       },
       {
         "timestamp": "2025-08-13 08:45:00",
@@ -8986,16 +9290,16 @@
         "open": 23905.5,
         "high": 23946.0,
         "low": 23901.0,
-        "close": 23943.5,
-        "volume": 10570
+        "close": 23942.5,
+        "volume": 9761
       },
       {
         "timestamp": "2025-08-13 13:30:00",
-        "open": 23943.5,
+        "open": 23946.25,
         "high": 23947.5,
         "low": 23900.75,
         "close": 23904.75,
-        "volume": 11493
+        "volume": 12302
       },
       {
         "timestamp": "2025-08-13 13:45:00",
@@ -9063,7 +9367,7 @@
       },
       {
         "timestamp": "2025-08-13 15:45:00",
-        "open": 23915.5,
+        "open": 23912.25,
         "high": 23958.5,
         "low": 23912.25,
         "close": 23943.0,
@@ -9759,7 +10063,7 @@
       },
       {
         "timestamp": "2025-08-14 14:30:00",
-        "open": 23904.25,
+        "open": 23904.5,
         "high": 23918.25,
         "low": 23893.5,
         "close": 23917.5,
@@ -10088,7 +10392,7 @@
       {
         "timestamp": "2025-08-15 01:45:00",
         "open": 23942.0,
-        "high": 23942.75,
+        "high": 23943.5,
         "low": 23939.0,
         "close": 23941.25,
         "volume": 277
@@ -10338,21 +10642,21 @@
         "open": 23909.25,
         "high": 23911.0,
         "low": 23835.0,
-        "close": 23852.5,
-        "volume": 32528
+        "close": 23858.0,
+        "volume": 31317
       },
       {
         "timestamp": "2025-08-15 09:45:00",
-        "open": 23852.25,
-        "high": 23854.0,
+        "open": 23817.25,
+        "high": 23820.0,
         "low": 23770.25,
         "close": 23807.0,
-        "volume": 29709
+        "volume": 30920
       },
       {
         "timestamp": "2025-08-15 10:00:00",
         "open": 23800.75,
-        "high": 23875.0,
+        "high": 23872.25,
         "low": 23770.25,
         "close": 23871.75,
         "volume": 24975
@@ -10408,10 +10712,26 @@
       {
         "timestamp": "2025-08-15 11:45:00",
         "open": 23741.75,
-        "high": 23799.75,
+        "high": 23819.0,
         "low": 23741.5,
-        "close": 23787.5,
-        "volume": 6174
+        "close": 23787.75,
+        "volume": 17183
+      },
+      {
+        "timestamp": "2025-08-15 12:00:00",
+        "open": 23787.75,
+        "high": 23809.75,
+        "low": 23767.75,
+        "close": 23804.0,
+        "volume": 10439
+      },
+      {
+        "timestamp": "2025-08-15 12:15:00",
+        "open": 23792.5,
+        "high": 23793.25,
+        "low": 23767.25,
+        "close": 23773.0,
+        "volume": 8833
       }
     ],
     "4h": [
@@ -10428,16 +10748,16 @@
         "open": 21763.5,
         "high": 21783.5,
         "low": 21716.0,
-        "close": 21745.25,
-        "volume": 13968
+        "close": 21744.75,
+        "volume": 13967
       },
       {
         "timestamp": "2025-06-09 00:00:00",
-        "open": 21743.75,
+        "open": 21744.0,
         "high": 21797.25,
         "low": 21729.0,
         "close": 21794.5,
-        "volume": 14219
+        "volume": 14220
       },
       {
         "timestamp": "2025-06-09 04:00:00",
@@ -10450,8 +10770,8 @@
       {
         "timestamp": "2025-06-09 08:00:00",
         "open": 21812.0,
-        "high": 21890.75,
-        "low": 21756.5,
+        "high": 21880.5,
+        "low": 21750.75,
         "close": 21838.5,
         "volume": 146933
       },
@@ -10460,16 +10780,16 @@
         "open": 21839.25,
         "high": 21885.0,
         "low": 21814.0,
-        "close": 21818.75,
-        "volume": 131809
+        "close": 21818.5,
+        "volume": 131810
       },
       {
         "timestamp": "2025-06-09 16:00:00",
-        "open": 21818.5,
+        "open": 21818.25,
         "high": 21847.75,
         "low": 21797.0,
         "close": 21832.5,
-        "volume": 15327
+        "volume": 4270
       },
       {
         "timestamp": "2025-06-09 20:00:00",
@@ -10477,15 +10797,15 @@
         "high": 21973.25,
         "low": 21815.25,
         "close": 21937.0,
-        "volume": 21531
+        "volume": 21530
       },
       {
         "timestamp": "2025-06-10 00:00:00",
-        "open": 21930.25,
+        "open": 21930.75,
         "high": 21932.75,
         "low": 21732.25,
         "close": 21796.25,
-        "volume": 34816
+        "volume": 34817
       },
       {
         "timestamp": "2025-06-10 04:00:00",
@@ -10533,7 +10853,7 @@
         "high": 21934.75,
         "low": 21866.0,
         "close": 21929.0,
-        "volume": 30956
+        "volume": 15541
       },
       {
         "timestamp": "2025-06-11 04:00:00",
@@ -10541,7 +10861,7 @@
         "high": 21959.5,
         "low": 21882.0,
         "close": 21930.0,
-        "volume": 36776
+        "volume": 18388
       },
       {
         "timestamp": "2025-06-11 08:00:00",
@@ -10549,7 +10869,7 @@
         "high": 22106.0,
         "low": 21888.5,
         "close": 21993.5,
-        "volume": 423636
+        "volume": 211818
       },
       {
         "timestamp": "2025-06-11 12:00:00",
@@ -10557,7 +10877,7 @@
         "high": 22018.5,
         "low": 21790.75,
         "close": 21887.5,
-        "volume": 469056
+        "volume": 234528
       },
       {
         "timestamp": "2025-06-11 16:00:00",
@@ -10565,7 +10885,7 @@
         "high": 21910.75,
         "low": 21818.0,
         "close": 21837.75,
-        "volume": 30966
+        "volume": 15483
       },
       {
         "timestamp": "2025-06-11 20:00:00",
@@ -10573,7 +10893,7 @@
         "high": 21849.0,
         "low": 21754.25,
         "close": 21807.25,
-        "volume": 32914
+        "volume": 16457
       },
       {
         "timestamp": "2025-06-12 00:00:00",
@@ -10650,18 +10970,18 @@
       {
         "timestamp": "2025-06-13 12:00:00",
         "open": 21833.25,
-        "high": 21854.75,
+        "high": 21853.75,
         "low": 21600.25,
         "close": 21652.25,
         "volume": 213278
       },
       {
         "timestamp": "2025-06-13 16:00:00",
-        "open": 21652.75,
+        "open": 21661.75,
         "high": 21679.0,
         "low": 21643.25,
-        "close": 21651.25,
-        "volume": 15586
+        "close": 21652.0,
+        "volume": 15859
       },
       {
         "timestamp": "2025-06-15 16:00:00",
@@ -10732,13 +11052,13 @@
         "open": 21863.5,
         "high": 21897.5,
         "low": 21781.0,
-        "close": 21815.25,
-        "volume": 10026
+        "close": 21815.0,
+        "volume": 10027
       },
       {
         "timestamp": "2025-06-17 04:00:00",
         "open": 21813.25,
-        "high": 21856.75,
+        "high": 21857.0,
         "low": 21771.5,
         "close": 21845.5,
         "volume": 13388
@@ -10747,9 +11067,9 @@
         "timestamp": "2025-06-17 08:00:00",
         "open": 21846.75,
         "high": 21910.0,
-        "low": 21802.5,
+        "low": 21802.25,
         "close": 21872.0,
-        "volume": 67646
+        "volume": 67645
       },
       {
         "timestamp": "2025-06-17 12:00:00",
@@ -10764,16 +11084,16 @@
         "open": 21730.25,
         "high": 21758.0,
         "low": 21640.5,
-        "close": 21671.75,
-        "volume": 7169
+        "close": 21681.0,
+        "volume": 7382
       },
       {
         "timestamp": "2025-06-17 20:00:00",
-        "open": 21683.75,
+        "open": 21681.0,
         "high": 21785.25,
-        "low": 21679.25,
+        "low": 21678.5,
         "close": 21749.0,
-        "volume": 5893
+        "volume": 5684
       },
       {
         "timestamp": "2025-06-18 00:00:00",
@@ -10794,7 +11114,7 @@
       {
         "timestamp": "2025-06-18 08:00:00",
         "open": 21782.75,
-        "high": 21872.25,
+        "high": 21871.25,
         "low": 21704.5,
         "close": 21815.0,
         "volume": 37774
@@ -10802,18 +11122,18 @@
       {
         "timestamp": "2025-06-18 12:00:00",
         "open": 21813.75,
-        "high": 21857.75,
+        "high": 21846.25,
         "low": 21660.0,
-        "close": 21723.25,
-        "volume": 48556
+        "close": 21718.75,
+        "volume": 46805
       },
       {
         "timestamp": "2025-06-18 16:00:00",
-        "open": 21722.5,
+        "open": 21737.5,
         "high": 21752.5,
         "low": 21686.75,
         "close": 21723.0,
-        "volume": 4124
+        "volume": 5875
       },
       {
         "timestamp": "2025-06-18 20:00:00",
@@ -10843,7 +11163,7 @@
         "timestamp": "2025-06-19 08:00:00",
         "open": 21596.25,
         "high": 21601.0,
-        "low": 21435.5,
+        "low": 21443.75,
         "close": 21463.75,
         "volume": 7868
       },
@@ -10853,7 +11173,7 @@
         "high": 21524.75,
         "low": 21461.75,
         "close": 21484.75,
-        "volume": 951
+        "volume": 0
       },
       {
         "timestamp": "2025-06-19 16:00:00",
@@ -10861,7 +11181,7 @@
         "high": 21705.25,
         "low": 21524.0,
         "close": 21665.0,
-        "volume": 940
+        "volume": 17935
       },
       {
         "timestamp": "2025-06-19 20:00:00",
@@ -10890,18 +11210,10 @@
       {
         "timestamp": "2025-06-20 08:00:00",
         "open": 21754.5,
-        "high": 21896.5,
+        "high": 21888.0,
         "low": 21748.75,
         "close": 21865.25,
-        "volume": 2643
-      },
-      {
-        "timestamp": "2025-06-20 16:00:00",
-        "open": 21874.0,
-        "high": 21874.0,
-        "low": 21874.0,
-        "close": 21874.0,
-        "volume": 0
+        "volume": 1544
       },
       {
         "timestamp": "2025-06-22 16:00:00",
@@ -10932,16 +11244,16 @@
         "open": 21896.0,
         "high": 21944.25,
         "low": 21775.0,
-        "close": 21824.75,
-        "volume": 33605
+        "close": 21827.5,
+        "volume": 33511
       },
       {
         "timestamp": "2025-06-23 08:00:00",
-        "open": 21825.25,
-        "high": 22018.0,
+        "open": 21831.0,
+        "high": 22016.0,
         "low": 21758.5,
         "close": 21938.5,
-        "volume": 182894
+        "volume": 182988
       },
       {
         "timestamp": "2025-06-23 12:00:00",
@@ -10970,7 +11282,7 @@
       {
         "timestamp": "2025-06-24 00:00:00",
         "open": 22244.5,
-        "high": 22384.25,
+        "high": 22377.0,
         "low": 22220.25,
         "close": 22306.25,
         "volume": 34491
@@ -11145,8 +11457,8 @@
       },
       {
         "timestamp": "2025-06-27 16:00:00",
-        "open": 22751.5,
-        "high": 22752.75,
+        "open": 22751.75,
+        "high": 22752.5,
         "low": 22727.25,
         "close": 22740.25,
         "volume": 18565
@@ -11162,18 +11474,18 @@
       {
         "timestamp": "2025-06-29 20:00:00",
         "open": 22817.25,
-        "high": 22880.5,
+        "high": 22880.25,
         "low": 22804.5,
-        "close": 22873.0,
-        "volume": 18305
+        "close": 22872.5,
+        "volume": 18304
       },
       {
         "timestamp": "2025-06-30 00:00:00",
-        "open": 22873.0,
+        "open": 22873.25,
         "high": 22901.5,
-        "low": 22849.25,
+        "low": 22849.75,
         "close": 22868.5,
-        "volume": 16286
+        "volume": 16287
       },
       {
         "timestamp": "2025-06-30 04:00:00",
@@ -11259,7 +11571,7 @@
         "timestamp": "2025-07-01 20:00:00",
         "open": 22709.75,
         "high": 22746.0,
-        "low": 22675.75,
+        "low": 22675.5,
         "close": 22739.0,
         "volume": 13033
       },
@@ -11268,16 +11580,16 @@
         "open": 22742.75,
         "high": 22781.25,
         "low": 22717.5,
-        "close": 22724.0,
-        "volume": 16523
+        "close": 22723.75,
+        "volume": 16524
       },
       {
         "timestamp": "2025-07-02 04:00:00",
-        "open": 22724.25,
+        "open": 22724.5,
         "high": 22737.25,
         "low": 22638.25,
         "close": 22662.5,
-        "volume": 22921
+        "volume": 22920
       },
       {
         "timestamp": "2025-07-02 08:00:00",
@@ -11299,7 +11611,7 @@
         "timestamp": "2025-07-02 16:00:00",
         "open": 22844.75,
         "high": 22863.25,
-        "low": 22828.5,
+        "low": 22827.75,
         "close": 22848.75,
         "volume": 15189
       },
@@ -11387,7 +11699,7 @@
         "timestamp": "2025-07-07 08:00:00",
         "open": 22980.75,
         "high": 23001.75,
-        "low": 22884.5,
+        "low": 22882.5,
         "close": 22929.0,
         "volume": 160509
       },
@@ -11427,7 +11739,7 @@
         "timestamp": "2025-07-08 04:00:00",
         "open": 22963.0,
         "high": 22963.75,
-        "low": 22905.75,
+        "low": 22905.5,
         "close": 22939.75,
         "volume": 16579
       },
@@ -11444,22 +11756,22 @@
         "open": 22906.5,
         "high": 22962.75,
         "low": 22870.25,
-        "close": 22891.75,
-        "volume": 166068
+        "close": 22898.0,
+        "volume": 157894
       },
       {
         "timestamp": "2025-07-08 16:00:00",
-        "open": 22891.5,
+        "open": 22891.25,
         "high": 22924.5,
-        "low": 22885.0,
+        "low": 22890.75,
         "close": 22901.75,
-        "volume": 12262
+        "volume": 20436
       },
       {
         "timestamp": "2025-07-08 20:00:00",
         "open": 22900.5,
-        "high": 22901.5,
-        "low": 22854.25,
+        "high": 22901.25,
+        "low": 22854.5,
         "close": 22874.25,
         "volume": 11337
       },
@@ -11490,7 +11802,7 @@
       {
         "timestamp": "2025-07-09 12:00:00",
         "open": 22948.25,
-        "high": 23057.75,
+        "high": 23057.0,
         "low": 22937.0,
         "close": 23051.0,
         "volume": 155037
@@ -11530,18 +11842,18 @@
       {
         "timestamp": "2025-07-10 08:00:00",
         "open": 23070.5,
-        "high": 23090.0,
+        "high": 23078.75,
         "low": 22901.25,
-        "close": 23024.5,
-        "volume": 190522
+        "close": 23020.0,
+        "volume": 189541
       },
       {
         "timestamp": "2025-07-10 12:00:00",
-        "open": 23024.25,
+        "open": 23018.25,
         "high": 23050.0,
         "low": 22963.25,
         "close": 23015.0,
-        "volume": 134374
+        "volume": 135355
       },
       {
         "timestamp": "2025-07-10 16:00:00",
@@ -11578,7 +11890,7 @@
       {
         "timestamp": "2025-07-11 08:00:00",
         "open": 22908.0,
-        "high": 23010.75,
+        "high": 23009.0,
         "low": 22863.0,
         "close": 22976.75,
         "volume": 188038
@@ -11633,9 +11945,9 @@
       },
       {
         "timestamp": "2025-07-14 16:00:00",
-        "open": 23034.25,
+        "open": 23034.0,
         "high": 23039.0,
-        "low": 22997.75,
+        "low": 22996.0,
         "close": 23011.5,
         "volume": 12963
       },
@@ -11649,9 +11961,9 @@
       },
       {
         "timestamp": "2025-07-15 00:00:00",
-        "open": 23092.5,
+        "open": 23093.0,
         "high": 23170.0,
-        "low": 23090.0,
+        "low": 23089.75,
         "close": 23161.5,
         "volume": 19746
       },
@@ -11675,17 +11987,17 @@
         "timestamp": "2025-07-15 12:00:00",
         "open": 23157.5,
         "high": 23180.0,
-        "low": 23050.0,
-        "close": 23052.25,
-        "volume": 184879
+        "low": 23069.25,
+        "close": 23073.75,
+        "volume": 176580
       },
       {
         "timestamp": "2025-07-15 16:00:00",
-        "open": 23052.0,
-        "high": 23059.25,
+        "open": 23058.0,
+        "high": 23058.0,
         "low": 22973.75,
         "close": 23014.25,
-        "volume": 25717
+        "volume": 34016
       },
       {
         "timestamp": "2025-07-15 20:00:00",
@@ -11771,7 +12083,7 @@
         "timestamp": "2025-07-17 12:00:00",
         "open": 23249.0,
         "high": 23279.75,
-        "low": 23236.75,
+        "low": 23236.5,
         "close": 23258.25,
         "volume": 153391
       },
@@ -11828,32 +12140,32 @@
         "open": 23226.25,
         "high": 23229.75,
         "low": 23217.0,
-        "close": 23224.25,
+        "close": 23228.5,
         "volume": 11311
       },
       {
         "timestamp": "2025-07-20 16:00:00",
-        "open": 23232.5,
+        "open": 23211.75,
         "high": 23262.75,
         "low": 23203.75,
         "close": 23260.25,
-        "volume": 7674
+        "volume": 6774
       },
       {
         "timestamp": "2025-07-20 20:00:00",
         "open": 23260.5,
         "high": 23277.25,
-        "low": 23242.5,
-        "close": 23246.25,
-        "volume": 9849
+        "low": 23250.5,
+        "close": 23254.5,
+        "volume": 8853
       },
       {
         "timestamp": "2025-07-21 00:00:00",
-        "open": 23247.0,
+        "open": 23253.0,
         "high": 23298.5,
-        "low": 23246.25,
+        "low": 23252.25,
         "close": 23295.75,
-        "volume": 11459
+        "volume": 12455
       },
       {
         "timestamp": "2025-07-21 04:00:00",
@@ -11875,7 +12187,7 @@
         "timestamp": "2025-07-21 12:00:00",
         "open": 23385.5,
         "high": 23423.5,
-        "low": 23328.5,
+        "low": 23330.5,
         "close": 23344.5,
         "volume": 162408
       },
@@ -11914,18 +12226,18 @@
       {
         "timestamp": "2025-07-22 08:00:00",
         "open": 23330.5,
-        "high": 23349.75,
+        "high": 23345.25,
         "low": 23108.0,
-        "close": 23206.5,
-        "volume": 266662
+        "close": 23221.0,
+        "volume": 260972
       },
       {
         "timestamp": "2025-07-22 12:00:00",
-        "open": 23206.75,
+        "open": 23208.5,
         "high": 23257.75,
         "low": 23159.5,
         "close": 23222.0,
-        "volume": 178183
+        "volume": 183873
       },
       {
         "timestamp": "2025-07-22 16:00:00",
@@ -11962,7 +12274,7 @@
       {
         "timestamp": "2025-07-23 08:00:00",
         "open": 23256.5,
-        "high": 23293.5,
+        "high": 23289.0,
         "low": 23146.75,
         "close": 23257.75,
         "volume": 212642
@@ -11993,7 +12305,7 @@
       },
       {
         "timestamp": "2025-07-24 00:00:00",
-        "open": 23382.25,
+        "open": 23381.5,
         "high": 23391.5,
         "low": 23352.5,
         "close": 23369.5,
@@ -12001,7 +12313,7 @@
       },
       {
         "timestamp": "2025-07-24 04:00:00",
-        "open": 23368.5,
+        "open": 23369.25,
         "high": 23402.75,
         "low": 23346.75,
         "close": 23386.75,
@@ -12034,7 +12346,7 @@
       {
         "timestamp": "2025-07-24 20:00:00",
         "open": 23406.5,
-        "high": 23441.5,
+        "high": 23441.75,
         "low": 23400.5,
         "close": 23429.25,
         "volume": 12144
@@ -12044,16 +12356,16 @@
         "open": 23428.75,
         "high": 23431.75,
         "low": 23355.0,
-        "close": 23366.25,
-        "volume": 15286
+        "close": 23366.0,
+        "volume": 15277
       },
       {
         "timestamp": "2025-07-25 04:00:00",
-        "open": 23367.0,
+        "open": 23369.0,
         "high": 23391.25,
         "low": 23348.75,
         "close": 23365.25,
-        "volume": 16973
+        "volume": 16982
       },
       {
         "timestamp": "2025-07-25 08:00:00",
@@ -12107,7 +12419,7 @@
         "timestamp": "2025-07-28 08:00:00",
         "open": 23501.5,
         "high": 23529.0,
-        "low": 23436.75,
+        "low": 23442.5,
         "close": 23493.5,
         "volume": 191842
       },
@@ -12204,16 +12516,16 @@
         "open": 23507.75,
         "high": 23541.25,
         "low": 23450.75,
-        "close": 23529.75,
-        "volume": 172369
+        "close": 23530.0,
+        "volume": 172368
       },
       {
         "timestamp": "2025-07-30 12:00:00",
-        "open": 23529.5,
+        "open": 23529.75,
         "high": 23589.5,
         "low": 23356.5,
         "close": 23483.75,
-        "volume": 257964
+        "volume": 257965
       },
       {
         "timestamp": "2025-07-30 16:00:00",
@@ -12316,7 +12628,7 @@
         "open": 22881.0,
         "high": 22894.25,
         "low": 22867.5,
-        "close": 22870.0,
+        "close": 22883.75,
         "volume": 19005
       },
       {
@@ -12421,7 +12733,7 @@
         "high": 23166.75,
         "low": 23045.5,
         "close": 23053.0,
-        "volume": 25895
+        "volume": 25752
       },
       {
         "timestamp": "2025-08-05 20:00:00",
@@ -12523,7 +12835,7 @@
         "timestamp": "2025-08-07 20:00:00",
         "open": 23540.5,
         "high": 23582.75,
-        "low": 23529.0,
+        "low": 23528.5,
         "close": 23554.0,
         "volume": 12004
       },
@@ -12796,8 +13108,16 @@
         "open": 23920.5,
         "high": 23924.25,
         "low": 23734.5,
-        "close": 23787.5,
-        "volume": 204969
+        "close": 23787.75,
+        "volume": 215978
+      },
+      {
+        "timestamp": "2025-08-15 12:00:00",
+        "open": 23787.75,
+        "high": 23809.75,
+        "low": 23767.25,
+        "close": 23773.0,
+        "volume": 19272
       }
     ],
     "1d": [
@@ -14822,8 +15142,8 @@
         "open": 23888.80078125,
         "high": 23963.0,
         "low": 23734.5,
-        "close": 23787.5,
-        "volume": 251340
+        "close": 23773.0,
+        "volume": 281663
       }
     ]
   },
@@ -14833,24 +15153,24 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-08-15T16:01:37.982898",
+      "timestamp": "2025-08-15T16:38:24.840072",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
     {
-      "title": "Índice de Volatilidad VIX: 14.99 (+0.16)",
+      "title": "Índice de Volatilidad VIX: 14.94 (+0.11)",
       "summary": "El VIX indica un sentimiento de mercado greedy. Niveles actuales suggen baja volatilidad.",
       "source": "Análisis VIX",
-      "timestamp": "2025-08-15T16:01:38.834546",
+      "timestamp": "2025-08-15T16:38:25.216174",
       "relevance": "high",
       "sentiment": "greedy"
     },
     {
-      "title": "Decisión de Tipos de Interés de la Fed",
-      "summary": "Las decisiones de política monetaria impactan directamente en las valoraciones tecnológicas.",
+      "title": "Resultados Trimestrales de Empresas Tecnológicas",
+      "summary": "Los resultados de las principales empresas del NASDAQ 100 influyen en la dirección del índice.",
       "source": "Calendario Económico",
-      "relevance": "high",
-      "timestamp": "2025-08-15T16:01:38.834564"
+      "relevance": "medium",
+      "timestamp": "2025-08-15T16:38:25.216195"
     }
   ],
   "summary": {
@@ -14865,7 +15185,7 @@
     },
     "technical_indicators": {
       "rsi": {
-        "value": 57.113092008622516,
+        "value": 56.84170399467441,
         "status": "NEUTRAL",
         "emoji": "🟡"
       },
@@ -14881,15 +15201,15 @@
       }
     },
     "volume_analysis": {
-      "rvol": 0.07040748604579276,
+      "rvol": 0.07860755659276664,
       "status": "BAJO",
       "big_prints_detected": 0,
       "emoji": "🔴"
     },
     "market_sentiment": {
       "vix": {
-        "value": 14.989999771118164,
-        "change": 0.15999984741210938,
+        "value": 14.9399995803833,
+        "change": 0.1099996566772461,
         "sentiment": "GREED",
         "emoji": "😐"
       },
@@ -14899,7 +15219,7 @@
         "emoji": "🟡"
       },
       "order_flow": {
-        "buy_pressure": 45.865746739879434,
+        "buy_pressure": 45.352210924115305,
         "sentiment": "NEUTRAL",
         "emoji": "🟡"
       }
