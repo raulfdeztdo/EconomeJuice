@@ -1,6 +1,6 @@
 {
   "date": "2025-09-01",
-  "timestamp": "2025-09-01T16:01:36.587449",
+  "timestamp": "2025-09-01T16:36:16.026611",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 23607.5390625,
@@ -304,12 +304,12 @@
       "momentum_10": -1.286886365307649,
       "resistance_level": 24068.5,
       "support_level": 23035.0,
-      "volume_ratio": 0.17472817910306554,
+      "volume_ratio": 0.18034717727603936,
       "volume_spike": 0,
       "current_price": 23491.5,
       "current_high": 23552.5,
       "current_low": 23370.5,
-      "current_volume": 82370,
+      "current_volume": 85043,
       "trend_short": "bullish",
       "price_above_vwap": 0,
       "scalp_buy_signal": 1,
@@ -7483,7 +7483,7 @@
         "high": 23552.5,
         "low": 23370.5,
         "close": 23491.5,
-        "volume": 82370
+        "volume": 85043
       }
     ]
   },
@@ -7493,7 +7493,7 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-09-01T16:01:36.101540",
+      "timestamp": "2025-09-01T16:36:15.559912",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
@@ -7501,16 +7501,16 @@
       "title": "Índice de Volatilidad VIX: 16.12 (+0.76)",
       "summary": "El VIX indica un sentimiento de mercado neutral. Niveles actuales suggen volatilidad moderada.",
       "source": "Análisis VIX",
-      "timestamp": "2025-09-01T16:01:36.586138",
+      "timestamp": "2025-09-01T16:36:16.025227",
       "relevance": "high",
       "sentiment": "neutral"
     },
     {
-      "title": "Datos de Empleo No Agrícola (NFP) - Próxima publicación",
-      "summary": "Los datos de empleo estadounidense son clave para el sentimiento del mercado tecnológico.",
+      "title": "Decisión de Tipos de Interés de la Fed",
+      "summary": "Las decisiones de política monetaria impactan directamente en las valoraciones tecnológicas.",
       "source": "Calendario Económico",
       "relevance": "high",
-      "timestamp": "2025-09-01T16:01:36.586155"
+      "timestamp": "2025-09-01T16:36:16.025245"
     }
   ],
   "summary": {
