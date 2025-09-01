@@ -1,6 +1,6 @@
 {
   "date": "2025-09-01",
-  "timestamp": "2025-09-01T15:33:25.767819",
+  "timestamp": "2025-09-01T16:01:36.587449",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 23607.5390625,
@@ -142,13 +142,13 @@
     "model_score": 0.758
   },
   "vix_detailed_analysis": {
-    "vix_value": 16.149999618530273,
-    "vix_change_1d": 0.7899999618530273,
-    "vix_change_1d_pct": 5.143229033274108,
+    "vix_value": 16.1200008392334,
+    "vix_change_1d": 0.7600011825561523,
+    "vix_change_1d_pct": 4.947924476194681,
     "vix_30d_percentile": 66.66666666666666,
     "sentiment": "Neutral",
     "sentiment_score": 0,
-    "spx_vix_ratio": 400.01609400737027,
+    "spx_vix_ratio": 400.7605105020716,
     "vix_extreme_high": 0,
     "vix_extreme_low": 0,
     "market_fear_level": "moderate"
@@ -304,12 +304,12 @@
       "momentum_10": -1.286886365307649,
       "resistance_level": 24068.5,
       "support_level": 23035.0,
-      "volume_ratio": 0.16914596839175425,
+      "volume_ratio": 0.17472817910306554,
       "volume_spike": 0,
       "current_price": 23491.5,
       "current_high": 23552.5,
       "current_low": 23370.5,
-      "current_volume": 79716,
+      "current_volume": 82370,
       "trend_short": "bullish",
       "price_above_vwap": 0,
       "scalp_buy_signal": 1,
@@ -7483,7 +7483,7 @@
         "high": 23552.5,
         "low": 23370.5,
         "close": 23491.5,
-        "volume": 79716
+        "volume": 82370
       }
     ]
   },
@@ -7493,15 +7493,15 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-09-01T15:33:25.271201",
+      "timestamp": "2025-09-01T16:01:36.101540",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
     {
-      "title": "Índice de Volatilidad VIX: 16.15 (+0.79)",
+      "title": "Índice de Volatilidad VIX: 16.12 (+0.76)",
       "summary": "El VIX indica un sentimiento de mercado neutral. Niveles actuales suggen volatilidad moderada.",
       "source": "Análisis VIX",
-      "timestamp": "2025-09-01T15:33:25.766413",
+      "timestamp": "2025-09-01T16:01:36.586138",
       "relevance": "high",
       "sentiment": "neutral"
     },
@@ -7510,7 +7510,7 @@
       "summary": "Los datos de empleo estadounidense son clave para el sentimiento del mercado tecnológico.",
       "source": "Calendario Económico",
       "relevance": "high",
-      "timestamp": "2025-09-01T15:33:25.766431"
+      "timestamp": "2025-09-01T16:01:36.586155"
     }
   ],
   "summary": {
@@ -7548,8 +7548,8 @@
     },
     "market_sentiment": {
       "vix": {
-        "value": 16.149999618530273,
-        "change": 0.7899999618530273,
+        "value": 16.1200008392334,
+        "change": 0.7600011825561523,
         "sentiment": "NEUTRAL",
         "emoji": "😐"
       },
