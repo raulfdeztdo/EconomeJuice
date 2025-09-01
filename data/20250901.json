@@ -1,6 +1,6 @@
 {
   "date": "2025-09-01",
-  "timestamp": "2025-09-01T15:01:33.218430",
+  "timestamp": "2025-09-01T15:33:25.767819",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 23607.5390625,
@@ -304,12 +304,12 @@
       "momentum_10": -1.286886365307649,
       "resistance_level": 24068.5,
       "support_level": 23035.0,
-      "volume_ratio": 0.16159846845491974,
+      "volume_ratio": 0.16914596839175425,
       "volume_spike": 0,
       "current_price": 23491.5,
       "current_high": 23552.5,
       "current_low": 23370.5,
-      "current_volume": 76130,
+      "current_volume": 79716,
       "trend_short": "bullish",
       "price_above_vwap": 0,
       "scalp_buy_signal": 1,
@@ -7483,7 +7483,7 @@
         "high": 23552.5,
         "low": 23370.5,
         "close": 23491.5,
-        "volume": 76130
+        "volume": 79716
       }
     ]
   },
@@ -7493,7 +7493,7 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-09-01T15:01:32.802170",
+      "timestamp": "2025-09-01T15:33:25.271201",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
@@ -7501,16 +7501,16 @@
       "title": "Índice de Volatilidad VIX: 16.15 (+0.79)",
       "summary": "El VIX indica un sentimiento de mercado neutral. Niveles actuales suggen volatilidad moderada.",
       "source": "Análisis VIX",
-      "timestamp": "2025-09-01T15:01:33.216982",
+      "timestamp": "2025-09-01T15:33:25.766413",
       "relevance": "high",
       "sentiment": "neutral"
     },
     {
-      "title": "Resultados Trimestrales de Empresas Tecnológicas",
-      "summary": "Los resultados de las principales empresas del NASDAQ 100 influyen en la dirección del índice.",
+      "title": "Datos de Empleo No Agrícola (NFP) - Próxima publicación",
+      "summary": "Los datos de empleo estadounidense son clave para el sentimiento del mercado tecnológico.",
       "source": "Calendario Económico",
-      "relevance": "medium",
-      "timestamp": "2025-09-01T15:01:33.217001"
+      "relevance": "high",
+      "timestamp": "2025-09-01T15:33:25.766431"
     }
   ],
   "summary": {
