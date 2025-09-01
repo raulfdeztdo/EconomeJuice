@@ -1,6 +1,6 @@
 {
   "date": "2025-09-01",
-  "timestamp": "2025-09-01T21:01:29.208706",
+  "timestamp": "2025-09-01T21:31:27.024607",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 23607.5390625,
@@ -7493,7 +7493,7 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-09-01T21:01:28.676641",
+      "timestamp": "2025-09-01T21:31:26.599853",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
@@ -7501,16 +7501,16 @@
       "title": "Índice de Volatilidad VIX: 16.12 (+0.76)",
       "summary": "El VIX indica un sentimiento de mercado neutral. Niveles actuales suggen volatilidad moderada.",
       "source": "Análisis VIX",
-      "timestamp": "2025-09-01T21:01:29.206967",
+      "timestamp": "2025-09-01T21:31:27.023096",
       "relevance": "high",
       "sentiment": "neutral"
     },
     {
-      "title": "Datos de Empleo No Agrícola (NFP) - Próxima publicación",
-      "summary": "Los datos de empleo estadounidense son clave para el sentimiento del mercado tecnológico.",
+      "title": "Resultados Trimestrales de Empresas Tecnológicas",
+      "summary": "Los resultados de las principales empresas del NASDAQ 100 influyen en la dirección del índice.",
       "source": "Calendario Económico",
-      "relevance": "high",
-      "timestamp": "2025-09-01T21:01:29.207011"
+      "relevance": "medium",
+      "timestamp": "2025-09-01T21:31:27.023115"
     }
   ],
   "summary": {
