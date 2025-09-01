@@ -1,6 +1,6 @@
 {
   "date": "2025-09-01",
-  "timestamp": "2025-09-01T14:34:53.385622",
+  "timestamp": "2025-09-01T15:01:33.218430",
   "symbol": "^NDX",
   "yesterday_data": {
     "high": 23607.5390625,
@@ -142,13 +142,13 @@
     "model_score": 0.758
   },
   "vix_detailed_analysis": {
-    "vix_value": 16.170000076293945,
-    "vix_change_1d": 0.8100004196166992,
-    "vix_change_1d_pct": 5.273440349750129,
+    "vix_value": 16.149999618530273,
+    "vix_change_1d": 0.7899999618530273,
+    "vix_change_1d_pct": 5.143229033274108,
     "vix_30d_percentile": 66.66666666666666,
     "sentiment": "Neutral",
     "sentiment_score": 0,
-    "spx_vix_ratio": 399.52131942757836,
+    "spx_vix_ratio": 400.01609400737027,
     "vix_extreme_high": 0,
     "vix_extreme_low": 0,
     "market_fear_level": "moderate"
@@ -304,12 +304,12 @@
       "momentum_10": -1.286886365307649,
       "resistance_level": 24068.5,
       "support_level": 23035.0,
-      "volume_ratio": 0.15707690001626332,
+      "volume_ratio": 0.16159846845491974,
       "volume_spike": 0,
       "current_price": 23491.5,
       "current_high": 23552.5,
       "current_low": 23370.5,
-      "current_volume": 73983,
+      "current_volume": 76130,
       "trend_short": "bullish",
       "price_above_vwap": 0,
       "scalp_buy_signal": 1,
@@ -7483,7 +7483,7 @@
         "high": 23552.5,
         "low": 23370.5,
         "close": 23491.5,
-        "volume": 73983
+        "volume": 76130
       }
     ]
   },
@@ -7493,24 +7493,24 @@
       "summary": "Principales índices...",
       "source": "Investing.com",
       "url": "https://es.investing.com/indices/major-indices",
-      "timestamp": "2025-09-01T14:34:52.919713",
+      "timestamp": "2025-09-01T15:01:32.802170",
       "relevance": "high",
       "category": "nasdaq_tech"
     },
     {
-      "title": "Índice de Volatilidad VIX: 16.17 (+0.81)",
+      "title": "Índice de Volatilidad VIX: 16.15 (+0.79)",
       "summary": "El VIX indica un sentimiento de mercado neutral. Niveles actuales suggen volatilidad moderada.",
       "source": "Análisis VIX",
-      "timestamp": "2025-09-01T14:34:53.384093",
+      "timestamp": "2025-09-01T15:01:33.216982",
       "relevance": "high",
       "sentiment": "neutral"
     },
     {
-      "title": "Datos de Empleo No Agrícola (NFP) - Próxima publicación",
-      "summary": "Los datos de empleo estadounidense son clave para el sentimiento del mercado tecnológico.",
+      "title": "Resultados Trimestrales de Empresas Tecnológicas",
+      "summary": "Los resultados de las principales empresas del NASDAQ 100 influyen en la dirección del índice.",
       "source": "Calendario Económico",
-      "relevance": "high",
-      "timestamp": "2025-09-01T14:34:53.384118"
+      "relevance": "medium",
+      "timestamp": "2025-09-01T15:01:33.217001"
     }
   ],
   "summary": {
@@ -7548,8 +7548,8 @@
     },
     "market_sentiment": {
       "vix": {
-        "value": 16.170000076293945,
-        "change": 0.8100004196166992,
+        "value": 16.149999618530273,
+        "change": 0.7899999618530273,
         "sentiment": "NEUTRAL",
         "emoji": "😐"
       },
